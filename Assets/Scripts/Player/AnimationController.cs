@@ -55,6 +55,8 @@ public class AnimationController : MonoBehaviour
         }
         pizzaBoxBase.localPosition = newPizzaBoxBasePos;
         
+
+        //Fix world position issue with arm
         if(boardAngleDeg > 0)
         {
             LHandIK.position = Vector3.Lerp(initLHandIKPos, LHandTargetForward.position, Mathf.Abs(boardAngleDeg/30f));
