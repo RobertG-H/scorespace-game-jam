@@ -4,6 +4,7 @@ uint VertexCount;
 float4x4 Transform;
 float4x4 OldTransform;
 float FrameRate;
+float MainTextureDimension;
 
 StructuredBuffer<float> PositionBuffer;
 StructuredBuffer<float> OldPositionBuffer;
@@ -14,6 +15,14 @@ RWTexture2D<float4> PositionMap;
 RWTexture2D<float4> VelocityMap;
 RWTexture2D<float4> NormalMap;
 RWTexture2D<float4> ColorMap;
+
+Texture2D<float4> MainTex;
+SamplerState LinearSampler {
+	Filter = MIN_MAG_MIP_LINEAR;
+	AddressU = Clamp;
+	AddressV = Clamp;
+};
+
 
 // Hash function from H. Schechter & R. Bridson, goo.gl/RXiKaH
 uint Hash(uint s)
@@ -60,10 +69,10 @@ void TransferData(uint2 id : SV_DispatchThreadID)
     p0 = mul(OldTransform, float4(p0, 1)).xyz;
     p1 = mul(   Transform, float4(p1, 1)).xyz;
     n1 = mul(   Transform, float4(n1, 0)).xyz;
-	c1 = abs(c1);
+	c1 = MainTex[c1.xy*MainTextureDimension].rgb;
 
     PositionMap[id] = float4(p1, 1);
     VelocityMap[id] = float4((p1 - p0) * FrameRate, 0);
     NormalMap[id] = float4(n1, 0);
-	ColorMap[id] = float4(c1, 0);
+	ColorMap[id] = float4(c1, 1);
 }

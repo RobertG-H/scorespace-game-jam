@@ -12,6 +12,7 @@ namespace Smrvfx
         [SerializeField] RenderTexture _velocityMap = null;
 		[SerializeField] RenderTexture _colorMap = null;
 		[SerializeField] RenderTexture _normalMap = null;
+		[SerializeField] Texture2D _textureMap = null;
         [SerializeField] ComputeShader _compute = null;
 
         #endregion
@@ -25,7 +26,7 @@ namespace Smrvfx
 
         List<Vector3> _positionList = new List<Vector3>();
 		List<Vector3> _normalList = new List<Vector3>();
-		List<Vector3> _colorList = new List<Vector3>();
+		List<Vector3> _uvList = new List<Vector3>();
 
 		ComputeBuffer _positionBuffer1;
         ComputeBuffer _positionBuffer2;
@@ -80,9 +81,7 @@ namespace Smrvfx
 			_mesh.GetVertices(_positionList);
 			_mesh.GetNormals(_normalList);
 
-
-			_mesh.GetNormals(_colorList);
-			//_mesh.GetColors(_colorList);
+			_mesh.GetUVs(0,_uvList);
 
 			if (!CheckConsistency()) return;
 
@@ -160,10 +159,11 @@ namespace Smrvfx
             _compute.SetMatrix("Transform", _source.transform.localToWorldMatrix);
             _compute.SetMatrix("OldTransform", _previousTransform);
             _compute.SetFloat("FrameRate", 1 / Time.deltaTime);
+			_compute.SetFloat("MainTextureDimension", _textureMap.height);
 
             _positionBuffer1.SetData(_positionList);
             _normalBuffer.SetData(_normalList);
-			_colorBuffer.SetData(_colorList);
+			_colorBuffer.SetData(_uvList);
 
 
 			_compute.SetBuffer(0, "PositionBuffer", _positionBuffer1);
@@ -175,6 +175,7 @@ namespace Smrvfx
             _compute.SetTexture(0, "VelocityMap", _tempVelocityMap);
             _compute.SetTexture(0, "NormalMap", _tempNormalMap);
 			_compute.SetTexture(0, "ColorMap", _tempColorMap);
+			_compute.SetTexture(0, "MainTex", _textureMap);
 
 			_compute.Dispatch(0, mapWidth / 8, mapHeight / 8, 1);
 
