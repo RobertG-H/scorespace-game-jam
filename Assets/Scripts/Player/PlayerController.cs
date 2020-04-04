@@ -229,6 +229,7 @@ public class PlayerController : MonoBehaviour
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
+
         Rigidbody body = hit.collider.attachedRigidbody;
 
         // no rigidbody
@@ -257,7 +258,6 @@ public class PlayerController : MonoBehaviour
 
             Destroy(other.gameObject);
         }
-
     }
 
     void UpdateLogger()
