@@ -24,7 +24,7 @@ public class WorldSpaceOffsetSetter : MonoBehaviour
 
 		vfx.SetVector3("WsOffset", wsOffset);
 		vfx.SetVector3("EmitterOffset", this.transform.position);
-		vfx.SetFloat("RawSpeed", pcont.velocity);
+		vfx.SetFloat("RawSpeed", pcont.speed);
 
 		lastFramePos = this.transform.position;
     }
