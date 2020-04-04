@@ -253,7 +253,7 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.tag == "Pizza Pickup")
         {
             int numPizzas = other.gameObject.GetComponent<PizzaPickupController>().numberOfPizzas;
-            pizzaBoxManager.AddPizzaBox(numPizzas);
+            pizzaBoxManager.AddPizzaBox();//TODO: this was pizzaBoxManager.AddPizzaBox(numPizzas) but that  function got removed
 
             Destroy(other.gameObject);
         }
