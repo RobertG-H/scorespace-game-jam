@@ -13,13 +13,11 @@ public class PizzaBoxManager : MonoBehaviour
             transform = instance.transform;
             rb = instance.GetComponent<Rigidbody>();
             rb.isKinematic = true;
-            this.instance = instance;
         }
         public Vector3 initPoint;
         public Quaternion initRotation;
         public Transform transform;
         public Rigidbody rb;
-        public GameObject instance;
     }
     LinkedList<PizzaBox> pizzaBoxList;
     public GameObject pizzaBoxPrefab;
@@ -28,8 +26,7 @@ public class PizzaBoxManager : MonoBehaviour
     public float dropThreshDist;
     public float dropThresAngle;
     public float dropForce;
-    public float baseRotationDamping;
-    public float pizzaBoxDestroyDelay;
+    public float baseRotationTracking;
     private float pizzaBoxHeight;
 
     // Start is called before the first frame update
@@ -43,12 +40,12 @@ public class PizzaBoxManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if(Input.GetKeyDown("a"))
-        // {
-        //     AddPizzaBox(1);
-        // }
+        if(Input.GetKeyDown("a"))
+        {
+            AddPizzaBox();
+        }
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, board.rotation, baseRotationDamping/(float)pizzaBoxList.Count);
+        transform.rotation = Quaternion.Lerp(transform.rotation, board.rotation, baseRotationTracking/(float)pizzaBoxList.Count);
         
         var pizzaBox = pizzaBoxList.First;
         int idx = 0;
@@ -78,7 +75,6 @@ public class PizzaBoxManager : MonoBehaviour
                 var temp = pizzaBox;
                 pizzaBox.Value.transform.parent = null;
                 pizzaBoxList.Remove(pizzaBox);
-                Destroy(pizzaBox.Value.instance, pizzaBoxDestroyDelay);
                 pizzaBox = temp.Next;   
             }
             else
@@ -91,14 +87,11 @@ public class PizzaBoxManager : MonoBehaviour
     }
 
     
-    public void AddPizzaBox(int numPizzas)
+    public void AddPizzaBox()
     {
-        for(int i = 0; i < numPizzas; i++)
-        {
-            Quaternion initRotation = Quaternion.Euler(Vector3.up * Random.Range(-5, 5));
-            GameObject pizzaBoxInstance = Instantiate(pizzaBoxPrefab, transform.position + new Vector3(0, pizzaBoxList.Count * (pizzaBoxHeight), 0), initRotation);
-            pizzaBoxInstance.transform.parent = transform;
-            pizzaBoxList.AddLast(new PizzaBox(pizzaBoxInstance, initRotation));
-        }
+        Quaternion initRotation = Quaternion.Euler(Vector3.up * Random.Range(-5, 5));
+        GameObject pizzaBoxInstance = Instantiate(pizzaBoxPrefab, transform.position + new Vector3(0, pizzaBoxList.Count * (pizzaBoxHeight), 0), initRotation);
+        pizzaBoxInstance.transform.parent = transform;
+        pizzaBoxList.AddLast(new PizzaBox(pizzaBoxInstance, initRotation));
     }
 }  
