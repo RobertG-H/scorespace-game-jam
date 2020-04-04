@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     CharacterController characterController;
     public Transform board;
-    private float acceleration = 0.1f;
+    public float acceleration;
     public float velocity = 0f;
     private float prevRollAngleRad;
     public float maxRollAngleDeg;
