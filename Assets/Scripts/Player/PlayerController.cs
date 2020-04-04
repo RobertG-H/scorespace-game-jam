@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     CharacterController characterController;
     public Transform board;
+    public PizzaBoxManager pizzaBoxManager;
     public float acceleration;
     public float gravity;
     public float speed = 0f;
@@ -237,6 +238,7 @@ public class PlayerController : MonoBehaviour
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
+
         Rigidbody body = hit.collider.attachedRigidbody;
 
         // no rigidbody
@@ -248,6 +250,24 @@ public class PlayerController : MonoBehaviour
         // Return if not touching sides
         if (characterController.collisionFlags != CollisionFlags.Sides) return;
         speed = 0f;
+
+        // Calculate push direction from move direction,
+        // we only push objects to the sides never up and down
+        // Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Pizza");
+        if(other.gameObject.tag == "Pizza Pickup")
+        {
+            int numPizzas = other.gameObject.GetComponent<PizzaPickupController>().numberOfPizzas;
+            pizzaBoxManager.AddPizzaBox(numPizzas);
+
+            Destroy(other.gameObject);
+        }
     }
 
     void UpdateLogger()
