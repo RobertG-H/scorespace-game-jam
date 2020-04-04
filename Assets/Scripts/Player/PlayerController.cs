@@ -1,20 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-
     CharacterController characterController;
-
     public Transform board;
-    
     private float acceleration = 0.1f;
-
     public float velocity = 0f;
-
-
     private float prevRollAngleRad;
+    public float maxRollAngleDeg;
+    public float maxTurnAngleDeg;
+
+
+    // Debuging tools
+    public bool isDebug;
+    public Text debugText;
 
     public float rollAngleDelta
     {
@@ -41,7 +43,6 @@ public class PlayerController : MonoBehaviour
             return Mathf.Rad2Deg * rollAngleRad;
         }
     }
-
     protected float centerScreenX = 0;
     public float CenterScreenX
     {
@@ -65,37 +66,50 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    // Start is called before the first frame update
     void Start()
     {
         centerScreenX = Screen.width/2;
         characterController = GetComponent<CharacterController>();
     }
 
-    
 
-    // Update is called once per frame
     void Update()
     {
-        // Update base yaw
-        transform.Rotate(0,rollAngleRad*-1,0,Space.World);
+        UpdateRotation();
+        UpdateVelocity();
+        if (isDebug) UpdateLogger();
+        prevRollAngleRad = rollAngleRad;
+    }
+
+    void UpdateRotation()
+    {
+        // Update player yaw based on rollangle
+        float yawUpdate = Mathf.Lerp(0,maxTurnAngleDeg,Mathf.Abs(rollAngleDeg)/maxRollAngleDeg) * Mathf.Sign(rollAngleDeg) * -1; 
+        transform.Rotate(0,yawUpdate,0,Space.World);
 
         // Update board roll
-        board.rotation = Quaternion.Euler(-rollAngleDeg, board.rotation.eulerAngles.y, board.rotation.eulerAngles.z);
+        float rollUpdate = rollAngleDeg * -1;
+        if (Mathf.Abs(rollUpdate) > maxRollAngleDeg) rollUpdate = maxRollAngleDeg * Mathf.Sign(rollUpdate);
+        board.rotation = Quaternion.Euler(rollUpdate, board.rotation.eulerAngles.y, board.rotation.eulerAngles.z);
+    }
 
+
+    void UpdateVelocity()
+    {
         Vector3 moveDirection = transform.forward;
-        Debug.DrawRay(transform.position, moveDirection, Color.green);
-
         float dampVel = 0f;
         if (rollAngleDelta != 0)
             velocity += acceleration * Mathf.Abs(rollAngleRad);
         else
         {
-            velocity = Mathf.SmoothDamp(velocity, 0f, ref dampVel, Mathf.Abs(rollAngleRad+0.2f)*2f);
+            velocity = Mathf.SmoothDamp(velocity, 0f, ref dampVel, Mathf.Abs(rollAngleRad+1f)*2f);
         }
-        // velocity = Mathf.SmoothDamp(velocity, 0f, ref dampVel, Mathf.Abs(rollAngleRad)*1f);
         characterController.Move(moveDirection * velocity * Time.deltaTime);
+    }
 
-        prevRollAngleRad = rollAngleRad;
+
+    void UpdateLogger()
+    {
+        debugText.text = string.Format("Mouse delta: {0}\n Roll Delta: {1}\nVel: {2}", MouseDelta, rollAngleDelta, velocity);
     }
 }
