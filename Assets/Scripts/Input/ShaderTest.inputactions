@@ -1,0 +1,226 @@
+{
+    "name": "ShaderTest",
+    "maps": [
+        {
+            "name": "MidiShader",
+            "id": "fdd94a72-d52a-4669-90cd-1e3a9f2687b7",
+            "actions": [
+                {
+                    "name": "MidiPad",
+                    "type": "Button",
+                    "id": "d6a37738-6ddc-4920-afff-460f5d68e406",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c5f907ea-4852-4782-bf30-aa372ce11e40",
+                    "path": "<MidiDevice>/control001",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseAndKeyboard",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "06da222e-e372-4f70-a5db-35f14218fa41",
+                    "path": "<MidiDevice>/control002",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseAndKeyboard",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fdef3180-8e64-46d9-8e0f-488f15d89cf3",
+                    "path": "<MidiDevice>/control004",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseAndKeyboard",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a63ebcab-abfe-4ac0-b0b6-db0a7a9d24be",
+                    "path": "<MidiDevice>/control003",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseAndKeyboard",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "428df811-cf61-4b42-a4d5-45aa5ab723d5",
+                    "path": "<MidiDevice>/control005",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseAndKeyboard",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4bad0701-1011-4449-815e-8d2531571df7",
+                    "path": "<MidiDevice>/control006",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseAndKeyboard",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "78b278f9-57c4-4eca-8902-2bad164b3a25",
+                    "path": "<MidiDevice>/control007",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseAndKeyboard",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d75203c6-7464-4b1e-9e13-cec230066b78",
+                    "path": "<MidiDevice>/control008",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseAndKeyboard",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4125187d-f6c4-4e3d-9ec4-b4cdd39aff1b",
+                    "path": "<MidiDevice>/note067",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36e88b83-7a5a-4ed9-91dd-e80332cfa70a",
+                    "path": "<MidiDevice>/note069",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cbd50c59-55c6-45f9-8c82-6df48881e27e",
+                    "path": "<MidiDevice>/note060",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9a016de3-79fe-4386-b94e-55d7a1dc6056",
+                    "path": "<MidiDevice>/note062",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a76b274e-5c1a-4234-9ac5-def14e3d68c0",
+                    "path": "<MidiDevice>/note064",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "acad6a84-d0a8-4850-a8e9-bb0b27f355e4",
+                    "path": "<MidiDevice>/note065",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "356424fa-5c57-4937-8d79-a18bc3c07537",
+                    "path": "<MidiDevice>/note071",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "87899e52-c58a-44b4-bfb6-2ef91876c956",
+                    "path": "<MidiDevice>/note072",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseAndKeyboard",
+                    "action": "MidiPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Gamepad",
+            "bindingGroup": "Gamepad",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "MouseAndKeyboard",
+            "bindingGroup": "MouseAndKeyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
