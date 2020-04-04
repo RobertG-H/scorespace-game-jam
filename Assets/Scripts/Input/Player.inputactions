@@ -57,6 +57,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "ShaderControl",
+            "id": "38fc7768-552d-46d7-9a72-d9aecbce4c81",
+            "actions": [
+                {
+                    "name": "BeatPad",
+                    "type": "Button",
+                    "id": "c0b30858-e91b-4002-9a54-0cdfe740ce9f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d6a6172a-50d9-498d-ab08-b4706efd0025",
+                    "path": "<MidiDevice>/control000",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseAndKeyboard",
+                    "action": "BeatPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
