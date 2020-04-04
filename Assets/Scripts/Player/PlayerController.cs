@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 
     CharacterController characterController;
 
+    public Transform board;
+    
     private float acceleration = 0.1f;
 
     public float velocity = 0f;
@@ -75,8 +77,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, rollAngleDeg);
+        // Update base yaw
         transform.Rotate(0,rollAngleRad*-1,0,Space.World);
+
+        // Update board roll
+        board.rotation = Quaternion.Euler(-rollAngleDeg, board.rotation.eulerAngles.y, board.rotation.eulerAngles.z);
+
         Vector3 moveDirection = transform.forward;
         Debug.DrawRay(transform.position, moveDirection, Color.green);
 
@@ -85,9 +91,9 @@ public class PlayerController : MonoBehaviour
             velocity += acceleration * Mathf.Abs(rollAngleRad);
         else
         {
-            // velocity -= Mathf.SmoothDamp(velocity, 0f, ref dampVel, Mathf.Abs(1/rollAngleRad)*100f);
+            velocity = Mathf.SmoothDamp(velocity, 0f, ref dampVel, Mathf.Abs(rollAngleRad+0.2f)*2f);
         }
-        // velocity -= Mathf.SmoothDamp(velocity, 0f, ref dampVel, Mathf.Abs(1/rollAngleRad)*100f);
+        // velocity = Mathf.SmoothDamp(velocity, 0f, ref dampVel, Mathf.Abs(rollAngleRad)*1f);
         characterController.Move(moveDirection * velocity * Time.deltaTime);
 
         prevRollAngleRad = rollAngleRad;
