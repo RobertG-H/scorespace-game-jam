@@ -2,39 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEditor;  
+using UnityEngine.UI;
 
 public class InputController : MonoBehaviour
 {
-  
-    CharacterController characterController;
+    [SerializeField]
+    PlayerController player;
 
-    float moveSpeed = 0;
+    public Text debugText;
+
+    Vector2 mousePosition; 
 
     // Start is called before the first frame update
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Move the controller
-        Vector3 moveDirection = Vector3.forward * moveSpeed;
-        characterController.Move(moveDirection * Time.deltaTime);
+        debugText.text = string.Format("Mouse delta: {0}\n Roll Delta: {1}\nVel: {2}", player.MouseDelta, player.rollAngleDelta, player.velocity );
     }
 
     public void OnMouse(InputAction.CallbackContext context)
     {
-        Debug.Log("Mouse");
-        Debug.Log(context.ReadValue<Vector2>());
+        mousePosition = context.ReadValue<Vector2>();
+        Vector2 delta = new Vector2(mousePosition.x - player.CenterScreenX, mousePosition.y);
+        player.MouseDelta = delta; 
     }
 
     public void OnSpace(InputAction.CallbackContext context)
     {
-        Debug.Log("Space Button");
-
-        Debug.Log(context.ReadValue<float>());
-        moveSpeed = context.ReadValue<float>();
     }
 }
