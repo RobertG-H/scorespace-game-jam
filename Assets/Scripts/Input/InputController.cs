@@ -30,6 +30,6 @@ public class InputController : MonoBehaviour
 
     public void OnSpace(InputAction.CallbackContext context)
     {
-
+        player.Boost();
     }
 }
