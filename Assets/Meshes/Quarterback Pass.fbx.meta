@@ -1,17 +1,12 @@
 fileFormatVersion: 2
-guid: 8097ebf1aad5dba4cb2dbae224bdc2e2
+guid: 5991e3cf2812b134394f399aac5dec73
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Texture
-    second: {fileID: 2100000, guid: dd3cc40fb75633b47a1be693e5541540, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
