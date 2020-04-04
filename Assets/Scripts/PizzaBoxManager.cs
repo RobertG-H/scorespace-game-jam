@@ -26,7 +26,7 @@ public class PizzaBoxManager : MonoBehaviour
     public float dropThreshDist;
     public float dropThresAngle;
     public float dropForce;
-    public float baseRotationDamping;
+    public float baseRotationTracking;
     private float pizzaBoxHeight;
 
     // Start is called before the first frame update
@@ -45,7 +45,7 @@ public class PizzaBoxManager : MonoBehaviour
             AddPizzaBox();
         }
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, board.rotation, baseRotationDamping/(float)pizzaBoxList.Count);
+        transform.rotation = Quaternion.Lerp(transform.rotation, board.rotation, baseRotationTracking/(float)pizzaBoxList.Count);
         
         var pizzaBox = pizzaBoxList.First;
         int idx = 0;

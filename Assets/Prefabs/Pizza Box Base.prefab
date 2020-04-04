@@ -50,4 +50,4 @@ MonoBehaviour:
   dropThreshDist: 0.5
   dropThresAngle: 50
   dropForce: 30
-  baseRotationDamping: 0.5
+  baseRotationTracking: 0.5

@@ -141,6 +141,8 @@ MonoBehaviour:
   pizzaBoxBase: {fileID: 950641314525663318}
   LHandTargetForward: {fileID: 8683023713375681076}
   LHandTargetBackward: {fileID: 8683023714125208363}
+  headRotationOffset: -75
+  headTracking: 0.2
 --- !u!1 &874148512013984952
 GameObject:
   m_ObjectHideFlags: 0
