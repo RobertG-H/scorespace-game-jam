@@ -826,6 +826,16 @@ PrefabInstance:
       propertyPath: debugImage
       value: 
       objectReference: {fileID: 623317723}
+    - target: {fileID: 431320007162437463, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: gravity
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 431320007162437463, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: RAYCASTDOWNDIST
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4b6f6bd37d4bf440967f13137e84da3, type: 3}
 --- !u!1001 &799398656816118757
