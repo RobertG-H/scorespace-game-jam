@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3947190886365150743}
   - component: {fileID: 3947190886365150742}
   - component: {fileID: 1637317414329860845}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pizza Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}

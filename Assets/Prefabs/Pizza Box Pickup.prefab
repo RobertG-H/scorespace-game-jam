@@ -70,9 +70,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1372808767489579630}
   - component: {fileID: 1372808767489579631}
+  - component: {fileID: 7436665896750601855}
   m_Layer: 0
   m_Name: Pizza Box Pickup
-  m_TagString: Untagged
+  m_TagString: Pizza Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +115,19 @@ MonoBehaviour:
   rotationSpeed: 90
   hoverSpeed: 2
   numberOfPizzas: 1
+--- !u!65 &7436665896750601855
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372808767489579629}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.786191, y: 1.3401423, z: 2.7855916}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &9032457907363788419
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -121,6 +121,302 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &303683
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 70.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &69857032
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 83.159996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &72171899
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &264868912
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
 --- !u!1 &467867774
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +508,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &467867777
 MonoBehaviour:
@@ -320,6 +616,539 @@ MonoBehaviour:
   useVolumetric: 1
   featuresFoldout: 1
   showAdditionalSettings: 0
+--- !u!1001 &478036727
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 56.979996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &563169626
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 96.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1 &586896992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 586896996}
+  - component: {fileID: 586896995}
+  - component: {fileID: 586896994}
+  - component: {fileID: 586896993}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &586896993
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586896992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &586896994
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586896992}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b30a6ca5ff2832d46b3b21a65c802d23, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &586896995
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586896992}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &586896996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586896992}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.2, y: 1.86, z: 22.7}
+  m_LocalScale: {x: 30.018099, y: 1.4, z: 31.232319}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &781656751
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 46.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &831284280
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &851346912
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 70.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &921364083
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 83.159996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
 --- !u!1 &947173664
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +1337,7 @@ MonoBehaviour:
       data1: 0
       data2: 0
   defaultFrameSettings: 0
---- !u!1001 &1372808766920985872
+--- !u!1001 &956757049
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -518,22 +1347,22 @@ PrefabInstance:
     - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
         type: 3}
       propertyPath: m_Name
-      value: Pizza Box Pickup
+      value: Pizza Box Pickup (22)
       objectReference: {fileID: 0}
     - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 11.4
       objectReference: {fileID: 0}
     - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 96.88
       objectReference: {fileID: 0}
     - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
         type: 3}
@@ -558,7 +1387,1622 @@ PrefabInstance:
     - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
         type: 3}
       propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &968225143
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1096479434
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 46.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 44.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1121643010
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 96.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1163023883
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 44.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1193595309
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 70.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
       value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1229695821
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1258132240
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 56.979996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1282923231
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 46.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 56.979996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1485346403
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 46.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1489382838
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 46.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 83.159996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1565528211
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 46.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 70.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1675007668
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 83.159996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1687929816
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1799543193
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 46.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1826461174
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1846151660
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 56.979996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1934221958
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431320005606238701, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 431320007162437463, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: pizzaBoxManager
+      value: 
+      objectReference: {fileID: 1934221959}
+    - target: {fileID: 431320007162437463, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: isDebug
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e4b6f6bd37d4bf440967f13137e84da3, type: 3}
+--- !u!114 &1934221959 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5445626428320264662, guid: e4b6f6bd37d4bf440967f13137e84da3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1934221958}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e95aa0c0b91411242af2e9e3e41a7337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &1959325004
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 44.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &2005058132
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 44.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &2090301954
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &2090972057
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 46.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 96.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579631, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: numberOfPizzas
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea310f663f9145047b53b6ec7d25f13c, type: 3}
+--- !u!1001 &1372808766920985872
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372808767489579629, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pizza Box Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1372808767489579630, guid: ea310f663f9145047b53b6ec7d25f13c,
         type: 3}
