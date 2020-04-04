@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     public float rollDeltaSlowThreshold;
     public bool isSkidding = false;
     private bool isGrounded = false;
-    public float RAYCASTDOWNDIST;
     RollDirection rollingDirection
     {
         get
@@ -137,6 +136,20 @@ public class PlayerController : MonoBehaviour
 
         // Update board roll
         board.rotation = Quaternion.Euler(rollAngleDeg, board.rotation.eulerAngles.y, board.rotation.eulerAngles.z);
+
+        // Update board pitch
+        RaycastHit hit = RayCastGround();
+        // Debug.DrawRay(transform.position, hit.normal * 10.0f, Color.yellow,100f);
+        // Debug.DrawRay(transform.position, transform.forward * 10.0f, Color.red,100f);
+        Vector3 normalDir = Vector3.Normalize(hit.normal);
+        Vector3 forwardDir = Vector3.Normalize(transform.forward);
+        float targetAngle = (Mathf.Acos(Vector3.Dot(normalDir, forwardDir)) * Mathf.Rad2Deg -90) *-1;
+        
+        float sourceAngle = board.rotation.eulerAngles.z;
+        float singleStep = 10f * Time.deltaTime;
+
+        float moveAngle = Mathf.LerpAngle(sourceAngle,targetAngle, singleStep);
+        board.rotation = Quaternion.Euler(board.rotation.eulerAngles.x, board.rotation.eulerAngles.y, moveAngle);
     }
 
 
@@ -145,8 +158,8 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = transform.forward;
         float dampVel = 0f;
 
-        // Increase acceleration if rolling in direction of turn
-        if (rollingDirection != RollDirection.None && rollSide == rollingDirection)
+        // Increase acceleration if rolling in any direction
+        if (rollingDirection != RollDirection.None)
         {
             speed += acceleration * Mathf.Abs(rollAngleRad);
         }
@@ -171,18 +184,14 @@ public class PlayerController : MonoBehaviour
         // }
 
         velocity = moveDirection * speed;
-        if (!RayCastGround()) 
-        {
-            velocity.y += gravity; 
-        }
-        else
+        if (characterController.isGrounded) 
         {
             velocity.y = 0f;
         }
-
-        // isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
-        // if (isGrounded && _velocity.y < 0)
-        //     _velocity.y = 0f;
+        else
+        {
+            velocity.y += gravity; 
+        }
 
         characterController.Move(velocity*Time.deltaTime);
     }
@@ -208,22 +217,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool RayCastGround()
+    private RaycastHit RayCastGround()
     {
         int layerMask = 1 << LayerMask.NameToLayer("Ignore Raycast");
         layerMask += 1 << LayerMask.NameToLayer("Player");
         layerMask = ~layerMask;
         Vector3 currentPos = transform.position;
-
-        if (Physics.Raycast(currentPos, transform.TransformDirection(Vector3.down), RAYCASTDOWNDIST, layerMask))
+        RaycastHit hit;
+        if (Physics.Raycast(currentPos, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
         {
-            Debug.DrawRay(currentPos, transform.TransformDirection(Vector3.down) * RAYCASTDOWNDIST, Color.red);
-            return true;
+            Debug.DrawRay(currentPos, transform.TransformDirection(Vector3.down) * 5.0f, Color.red);
+            return hit;
         }
         else
         {
-            Debug.DrawRay(currentPos, transform.TransformDirection(Vector3.down) * RAYCASTDOWNDIST, Color.yellow);
-            return false;
+            Debug.DrawRay(currentPos, transform.TransformDirection(Vector3.down) * 5.0f, Color.yellow);
+            return hit;
         }
     }
 
@@ -237,14 +246,15 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-
         Debug.Log("HIT");
+        // Return if not touching sides
+        if (characterController.collisionFlags != CollisionFlags.Sides) return;
         speed = 0f;
-
 
         // Calculate push direction from move direction,
         // we only push objects to the sides never up and down
         // Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+
 
     }
 
@@ -264,6 +274,6 @@ public class PlayerController : MonoBehaviour
     {
         DebugGUI.Graph("rollDeltaGraph",  rollAngleDelta);
         DebugGUI.Graph("velGraph", speed);
-        debugText.text = string.Format("Grounded: {0}\n Vel: {1}\nCollide: {2}", RayCastGround(), velocity, characterController.collisionFlags);
+        debugText.text = string.Format("Grounded: {0}\n z-angle: {1}\nCollide: {2}", characterController.isGrounded, board.rotation.eulerAngles.z, characterController.collisionFlags);
     }
 }
