@@ -10,13 +10,18 @@ public class PlayerController : MonoBehaviour
 
     CharacterController characterController;
     public Transform board;
+    public PizzaBoxManager pizzaBoxManager;
     public float acceleration;
-    public float velocity = 0f;
+    public float gravity;
+    public float speed = 0f;
+    private Vector3 velocity;
     private float prevRollAngleRad = 0f;
     public float maxRollAngleDeg;
     public float maxTurnAngleDeg;
     public float rollDeltaSlowThreshold;
     public bool isSkidding = false;
+    private bool isGrounded = false;
+    public float RAYCASTDOWNDIST;
     RollDirection rollingDirection
     {
         get
@@ -143,7 +148,7 @@ public class PlayerController : MonoBehaviour
         // Increase acceleration if rolling in direction of turn
         if (rollingDirection != RollDirection.None && rollSide == rollingDirection)
         {
-            velocity += acceleration * Mathf.Abs(rollAngleRad);
+            speed += acceleration * Mathf.Abs(rollAngleRad);
         }
         // Slowdown stuff
         if (!isSkidding && rollAngleDelta > rollDeltaSlowThreshold)
@@ -164,14 +169,28 @@ public class PlayerController : MonoBehaviour
         // {
         //     velocity -= Mathf.Lerp(velocity*0.01f,0, Mathf.Abs(rollAngleDeg)/maxRollAngleDeg);
         // }
-        
-        characterController.Move(moveDirection * velocity * Time.deltaTime);
+
+        velocity = moveDirection * speed;
+        if (!RayCastGround()) 
+        {
+            velocity.y += gravity; 
+        }
+        else
+        {
+            velocity.y = 0f;
+        }
+
+        // isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
+        // if (isGrounded && _velocity.y < 0)
+        //     _velocity.y = 0f;
+
+        characterController.Move(velocity*Time.deltaTime);
     }
 
     void Skid()
     {
         float overshoot = (rollAngleDelta - rollDeltaSlowThreshold) / rollDeltaSlowThreshold;
-        velocity -= Mathf.Lerp(0,velocity/1f, overshoot); 
+        speed -= Mathf.Lerp(0,speed/1f, overshoot); 
         if (isDebug)
         {
             if (debugImage.color == Color.white)
@@ -183,16 +202,68 @@ public class PlayerController : MonoBehaviour
 
     public void Boost()
     {
-        if (velocity < 15)
+        if (speed < 15)
         {
-            velocity = 15;
+            speed = 15;
         }
+    }
+
+    private bool RayCastGround()
+    {
+        int layerMask = 1 << LayerMask.NameToLayer("Ignore Raycast");
+        layerMask += 1 << LayerMask.NameToLayer("Player");
+        layerMask = ~layerMask;
+        Vector3 currentPos = transform.position;
+
+        if (Physics.Raycast(currentPos, transform.TransformDirection(Vector3.down), RAYCASTDOWNDIST, layerMask))
+        {
+            Debug.DrawRay(currentPos, transform.TransformDirection(Vector3.down) * RAYCASTDOWNDIST, Color.red);
+            return true;
+        }
+        else
+        {
+            Debug.DrawRay(currentPos, transform.TransformDirection(Vector3.down) * RAYCASTDOWNDIST, Color.yellow);
+            return false;
+        }
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody body = hit.collider.attachedRigidbody;
+
+        // no rigidbody
+        if (body == null || body.isKinematic)
+        {
+            return;
+        }
+
+        Debug.Log("HIT");
+        speed = 0f;
+
+
+        // Calculate push direction from move direction,
+        // we only push objects to the sides never up and down
+        // Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Pizza");
+        if(other.gameObject.tag == "Pizza Pickup")
+        {
+            int numPizzas = other.gameObject.GetComponent<PizzaPickupController>().numberOfPizzas;
+            pizzaBoxManager.AddPizzaBox(numPizzas);
+
+            Destroy(other.gameObject);
+        }
+
     }
 
     void UpdateLogger()
     {
         DebugGUI.Graph("rollDeltaGraph",  rollAngleDelta);
-        DebugGUI.Graph("velGraph", velocity);
-        debugText.text = string.Format("Skid: {0}\n Roll Delta: {1}\nOvershoot: {2}", isSkidding, rollAngleDelta, (rollAngleDelta - rollDeltaSlowThreshold) / rollDeltaSlowThreshold);
+        DebugGUI.Graph("velGraph", speed);
+        debugText.text = string.Format("Grounded: {0}\n Vel: {1}\nCollide: {2}", RayCastGround(), velocity, characterController.collisionFlags);
     }
 }
