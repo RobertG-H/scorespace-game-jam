@@ -6,10 +6,10 @@ public class PizzaBoxManager : MonoBehaviour
 {
     struct PizzaBox
     {
-        public PizzaBox(GameObject instance)
+        public PizzaBox(GameObject instance, Quaternion initRotation)
         {
             initPoint = instance.transform.localPosition;
-            initRotation = instance.transform.localRotation;
+            this.initRotation = initRotation;
             transform = instance.transform;
             rb = instance.GetComponent<Rigidbody>();
             rb.isKinematic = true;
@@ -21,9 +21,12 @@ public class PizzaBoxManager : MonoBehaviour
     }
     LinkedList<PizzaBox> pizzaBoxList;
     public GameObject pizzaBoxPrefab;
+    public Transform board;
     public float flexiness;
-    public float dropThresh;
+    public float dropThreshDist;
+    public float dropThresAngle;
     public float dropForce;
+    public float baseRotationDamping;
     private float pizzaBoxHeight;
 
     // Start is called before the first frame update
@@ -41,21 +44,30 @@ public class PizzaBoxManager : MonoBehaviour
         {
             AddPizzaBox();
         }
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, board.rotation, baseRotationDamping/(float)pizzaBoxList.Count);
+        
         var pizzaBox = pizzaBoxList.First;
         int idx = 0;
         while(pizzaBox != null)
         {
             Quaternion newRotation = Quaternion.identity;
-            newRotation *= Quaternion.Euler(transform.localEulerAngles.x, 0, transform.localEulerAngles.z);
+            newRotation *= Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
             pizzaBox.Value.transform.localRotation = pizzaBox.Value.initRotation * newRotation;
             
             Vector3 newPos = pizzaBox.Value.initPoint;
-            newPos.y = (newPos.y - transform.position.y) * Mathf.Cos(transform.localEulerAngles.x * Mathf.Deg2Rad);
+            newPos.y = (newPos.y) * Mathf.Cos(transform.eulerAngles.x * Mathf.Deg2Rad);
             // newPos.x = (newPos.y - transform.position.y) * (flexiness * idx) * Mathf.Sin(transform.localEulerAngles.z * Mathf.Deg2Rad);
-            newPos.z = (newPos.y - transform.position.y) * (flexiness * idx) * Mathf.Sin(transform.localEulerAngles.x * Mathf.Deg2Rad);
+            newPos.z = (newPos.y) * (flexiness * idx) * Mathf.Sin(transform.eulerAngles.x * Mathf.Deg2Rad);
 
             pizzaBox.Value.transform.localPosition = newPos;
-            if(pizzaBox != pizzaBoxList.First && Mathf.Abs(pizzaBox.Value.transform.position.z - pizzaBox.Previous.Value.transform.position.z) > dropThresh)
+            
+            float pizzaBoxXRot = pizzaBox.Value.transform.rotation.eulerAngles.x;
+            if(pizzaBoxXRot > 180)
+            {
+                pizzaBoxXRot -= 360;
+            }
+            if(pizzaBox != pizzaBoxList.First && Mathf.Abs(pizzaBox.Value.transform.localPosition.z - pizzaBox.Previous.Value.transform.localPosition.z) > dropThreshDist || Mathf.Abs(pizzaBoxXRot) > dropThresAngle)
             {
                 pizzaBox.Value.rb.isKinematic = false;
                 Debug.DrawRay(pizzaBox.Value.transform.position, pizzaBox.Value.transform.rotation * Vector3.up, Color.red, 1.0f);
@@ -77,8 +89,9 @@ public class PizzaBoxManager : MonoBehaviour
     
     public void AddPizzaBox()
     {
-        GameObject pizzaBoxInstance = Instantiate(pizzaBoxPrefab, transform.position + new Vector3(0, pizzaBoxList.Count * (pizzaBoxHeight), 0), Quaternion.Euler(Vector3.up * Random.Range(-5, 5)));
+        Quaternion initRotation = Quaternion.Euler(Vector3.up * Random.Range(-5, 5));
+        GameObject pizzaBoxInstance = Instantiate(pizzaBoxPrefab, transform.position + new Vector3(0, pizzaBoxList.Count * (pizzaBoxHeight), 0), initRotation);
         pizzaBoxInstance.transform.parent = transform;
-        pizzaBoxList.AddLast(new PizzaBox(pizzaBoxInstance));
+        pizzaBoxList.AddLast(new PizzaBox(pizzaBoxInstance, initRotation));
     }
 }  

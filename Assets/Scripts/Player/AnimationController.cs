@@ -22,7 +22,7 @@ public class AnimationController : MonoBehaviour
     void Start()
     {
         initHipsPos = hips.localPosition;
-        initLHandIKPos = LHandIK.position;
+        initLHandIKPos = LHandIK.localPosition;
         initpizzaBoxBasePos = pizzaBoxBase.localPosition;
     }
 
@@ -30,14 +30,14 @@ public class AnimationController : MonoBehaviour
     void Update()
     {
         
-        float boardAngle = board.localEulerAngles.x*Mathf.Deg2Rad;
+        float boardAngle = board.eulerAngles.x*Mathf.Deg2Rad;
 
         hips.localRotation = board.localRotation;
         Vector3 newHipsPos = hips.localPosition;
         newHipsPos.y = initHipsPos.y * Mathf.Cos(boardAngle );
         hips.localPosition = newHipsPos;
 
-        float boardAngleDeg = board.localEulerAngles.x;
+        float boardAngleDeg = board.eulerAngles.x;
         if(boardAngleDeg > 180)
         {
             boardAngleDeg -= 360;
@@ -56,14 +56,13 @@ public class AnimationController : MonoBehaviour
         pizzaBoxBase.localPosition = newPizzaBoxBasePos;
         
 
-        //Fix world position issue with arm
         if(boardAngleDeg > 0)
         {
-            LHandIK.position = Vector3.Lerp(initLHandIKPos, LHandTargetForward.position, Mathf.Abs(boardAngleDeg/30f));
+            LHandIK.localPosition = Vector3.Lerp(initLHandIKPos, LHandTargetForward.localPosition, Mathf.Abs(boardAngleDeg/30f));
         }
         else
         {
-            LHandIK.position = Vector3.Lerp(initLHandIKPos, LHandTargetBackward.position, Mathf.Abs(boardAngleDeg/30f));
+            LHandIK.localPosition = Vector3.Lerp(initLHandIKPos, LHandTargetBackward.localPosition, Mathf.Abs(boardAngleDeg/30f));
         }
     }
 }

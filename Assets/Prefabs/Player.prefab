@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27eeb897fe19214eb1f2673d985655c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  board: {fileID: 4477659190622461473}
+  board: {fileID: 379862217165038825}
   acceleration: 0.4
   velocity: 0
   maxRollAngleDeg: 45
@@ -524,9 +524,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5090082837300699263}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4477659190622461473 stripped
+--- !u!4 &379862217165038825 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8683023713858125406, guid: d5f764b181f07094bab5a724dc0bc09c,
+  m_CorrespondingSourceObject: {fileID: 4892617783900636310, guid: d5f764b181f07094bab5a724dc0bc09c,
     type: 3}
   m_PrefabInstance: {fileID: 5090082837300699263}
   m_PrefabAsset: {fileID: 0}
