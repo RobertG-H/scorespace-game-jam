@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEditor;  
-using UnityEngine.UI;
+
 
 public class InputController : MonoBehaviour
 {
     [SerializeField]
     PlayerController player;
-
-    public Text debugText;
-
     Vector2 mousePosition; 
 
     // Start is called before the first frame update
@@ -22,7 +19,6 @@ public class InputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        debugText.text = string.Format("Mouse delta: {0}\n Roll Delta: {1}\nVel: {2}", player.MouseDelta, player.rollAngleDelta, player.velocity );
     }
 
     public void OnMouse(InputAction.CallbackContext context)
@@ -34,5 +30,6 @@ public class InputController : MonoBehaviour
 
     public void OnSpace(InputAction.CallbackContext context)
     {
+
     }
 }
