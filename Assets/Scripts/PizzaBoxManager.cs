@@ -30,10 +30,15 @@ public class PizzaBoxManager : MonoBehaviour
     public float dropThreshDist;
     public float dropThresAngle;
     public float dropForce;
-    public float boardRotationTracking;
+    public float rollTracking;
+    public float rollAngleFlex;
+    public float rollDistFlex;
     public float handRotationTracking;
+    public float boardRotationTracking;
     public float pizzaBoxDestroyDelay;
     private float pizzaBoxHeight;
+
+    private float rollModifier = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -49,20 +54,25 @@ public class PizzaBoxManager : MonoBehaviour
         {
             AddPizzaBox(1);
         }
-        float baseXRot = transform.localEulerAngles.x;
-        if(baseXRot > 180)
-        {
-            baseXRot -= 360;
-        }
+
+
+        // float baseXRot = transform.localEulerAngles.x;
+        float rollAngleDelta = playerController.rollAngleDelta;
+        rollModifier = Mathf.Lerp(rollModifier, rollAngleDelta, rollTracking);
+        // rollModifier = 0;
+
+
+        // float handRotX = GetHandRotation()*Time.deltaTime*handRotationTracking/Mathf.Max(1, (float)pizzaBoxList.Count) + baseXRot;
+        // handRotX = Mathf.Clamp(handRotX, -60, 60);
         Quaternion newBaseRotation = Quaternion.identity;
-        float boardRotX = board.localEulerAngles.x;
+        newBaseRotation *= Quaternion.Euler(board.localEulerAngles.x, board.localEulerAngles.y, 0);//remove boardrot
 
-        float handRotX =  GetHandRotation();
-        // float handRotX = Mathf.Lerp(baseXRot, handRotX, 1f);
-
-        newBaseRotation *= Quaternion.Euler(handRotX, board.localEulerAngles.y, 0);//remove boardrot
-
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, newBaseRotation, boardRotationTracking/(float)pizzaBoxList.Count);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, newBaseRotation, boardRotationTracking/Mathf.Max(1, (float)pizzaBoxList.Count));
+        
+        float handRotX = GetHandRotation();
+        newBaseRotation = Quaternion.identity;
+        newBaseRotation *= Quaternion.Euler(handRotX, 0, 0);//remove boardrot
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, newBaseRotation, handRotationTracking/Mathf.Max(1, (float)pizzaBoxList.Count));
 
 
         
@@ -71,22 +81,19 @@ public class PizzaBoxManager : MonoBehaviour
         while(pizzaBox != null)
         {
             Quaternion newRotation = Quaternion.identity;
-            newRotation *= Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+            newRotation *= Quaternion.Euler(transform.eulerAngles.x - rollModifier*rollAngleFlex, 0, transform.eulerAngles.z);
             pizzaBox.Value.transform.localRotation = pizzaBox.Value.initRotation * newRotation;
             
             Vector3 newPos = pizzaBox.Value.initPoint;
             newPos.y = (newPos.y) * Mathf.Cos(transform.eulerAngles.x * Mathf.Deg2Rad);
             // newPos.x = (newPos.y - transform.position.y) * (flexiness * idx) * Mathf.Sin(transform.localEulerAngles.z * Mathf.Deg2Rad);
-            newPos.z = (newPos.y) * (flexiness * idx) * Mathf.Sin(transform.eulerAngles.x * Mathf.Deg2Rad);
+            newPos.z = (newPos.y) * (flexiness * idx) * Mathf.Sin(transform.eulerAngles.x * Mathf.Deg2Rad) - (rollModifier*idx*rollDistFlex);
 
             pizzaBox.Value.transform.localPosition = newPos;
             
-            float pizzaBoxXRot = pizzaBox.Value.transform.rotation.eulerAngles.x;
-            if(pizzaBoxXRot > 180)
-            {
-                pizzaBoxXRot -= 360;
-            }
-            if(pizzaBox != pizzaBoxList.First && Mathf.Abs(pizzaBox.Value.transform.localPosition.z - pizzaBox.Previous.Value.transform.localPosition.z) > dropThreshDist || Mathf.Abs(pizzaBoxXRot) > dropThresAngle)
+            float pizzaBoxXRot = ConvertTo180(pizzaBox.Value.transform.rotation.eulerAngles.x);
+ 
+            if(pizzaBox != pizzaBoxList.First && pizzaBox.Next == null && Mathf.Abs(pizzaBox.Value.transform.localPosition.z - pizzaBox.Previous.Value.transform.localPosition.z) > dropThreshDist || Mathf.Abs(pizzaBoxXRot) > dropThresAngle)
             {
                 pizzaBox.Value.rb.isKinematic = false;
                 Debug.DrawRay(pizzaBox.Value.transform.position, pizzaBox.Value.transform.rotation * Vector3.up, Color.red, 1.0f);
@@ -117,7 +124,6 @@ public class PizzaBoxManager : MonoBehaviour
             pizzaBoxList.AddLast(new PizzaBox(pizzaBoxInstance, initRotation));
         }
     }
-
     public int DeliverAll()
     {
         if (pizzaBoxList.Count == 0) return 0;
@@ -140,6 +146,16 @@ public class PizzaBoxManager : MonoBehaviour
 		handHeight *= playerController.mousePos.x / (Screen.width*0.5f / Screen.dpi);
 
 		return -handHeight*50f;
+    }
+
+    private float ConvertTo180(float angle)
+    {
+        //Convert angle from 0 to 360 to be between -180 and 180
+        if(angle > 180)
+        {
+            return angle -360;
+        }
+        return angle;
     }
 }  
 
