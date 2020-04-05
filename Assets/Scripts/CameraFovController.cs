@@ -35,16 +35,9 @@ public class CameraFovController : MonoBehaviour
 		float fov = Mathf.Clamp01((playerController.speed - minMaxSpeedRangeToAdjustFov.x) / (minMaxSpeedRangeToAdjustFov.y - minMaxSpeedRangeToAdjustFov.x));
 		fov = fov * (minMaxFovFromSpeed.y - minMaxFovFromSpeed.x) + minMaxFovFromSpeed.x;
 
-		cam.fieldOfView = SoftLerp(cam.fieldOfView, fov, lerpSpeed*Time.deltaTime);
+		cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, fov, lerpSpeed);
 	}
 
-	float SoftLerp(float current, float target, float step)
-	{
-		float difference = target - current;
-		step = Mathf.Min(step, Mathf.Abs(difference));
-
-		return current + step * Mathf.Sign(difference);
-		
-	}
+	
 
 }
