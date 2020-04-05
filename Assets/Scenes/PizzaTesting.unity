@@ -2596,6 +2596,11 @@ PrefabInstance:
       propertyPath: handRotationTracking
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 5445626428320264662, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: deadzoneHandRotationTracking
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 7550575967416266973, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

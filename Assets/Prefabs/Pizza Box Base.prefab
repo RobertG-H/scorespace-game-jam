@@ -53,4 +53,6 @@ MonoBehaviour:
   dropForce: 30
   boardRotationTracking: 0.5
   handRotationTracking: 0.25
+  deadzoneHamndThreshold: 20
+  deadzoneHandRotationTracking: 0.01
   pizzaBoxDestroyDelay: 5
