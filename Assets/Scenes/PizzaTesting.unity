@@ -447,7 +447,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 60008.92
+  m_Intensity: 11100
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 60008.92
+  m_Intensity: 11100
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -2453,11 +2453,6 @@ PrefabInstance:
         type: 3}
       propertyPath: isDebug
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 431320007494495941, guid: e4b6f6bd37d4bf440967f13137e84da3,
-        type: 3}
-      propertyPath: field of view
-      value: 89.5
       objectReference: {fileID: 0}
     - target: {fileID: 3402027699958671789, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
