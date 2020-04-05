@@ -49,8 +49,11 @@ MonoBehaviour:
   playerController: {fileID: 0}
   flexiness: 1
   dropThreshDist: 0.5
-  dropThresAngle: 50
+  dropThresAngle: 30
   dropForce: 30
-  boardRotationTracking: 0.5
-  handRotationTracking: 1
+  rollTracking: 0.05
+  rollAngleFlex: 5
+  rollDistFlex: 0.2
+  handRotationTracking: 0.5
+  boardRotationTracking: 0
   pizzaBoxDestroyDelay: 5
