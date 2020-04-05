@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 431320007162437465}
   - component: {fileID: 431320007162437462}
   - component: {fileID: 431320007162437463}
+  - component: {fileID: 6456387814207315450}
   m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
@@ -222,7 +223,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 379862217165038825}
-  pizzaBoxManager: {fileID: 5445626428320264662}
   acceleration: 0.4
   gravity: -30
   speed: 0
@@ -230,12 +230,24 @@ MonoBehaviour:
   maxTurnAngleDeg: 1
   rollDeltaSlowThreshold: 2
   isSkidding: 0
-  RAYCASTDOWNDIST: 1.5
   isDebug: 0
   debugText: {fileID: 0}
   debugImage: {fileID: 0}
   rollAngleDeltaDeadzone: 0
   rollAngleDelta: 0
+--- !u!114 &6456387814207315450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431320007162437460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d6e28eb884b53438743e8958d32a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pizzaBoxManager: {fileID: 5445626428320264662}
 --- !u!1 &431320007494495937
 GameObject:
   m_ObjectHideFlags: 0
