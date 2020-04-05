@@ -13,6 +13,7 @@ public class PlayerPizzaGrabHandler : MonoBehaviour
 		{
 			int numPizzas = other.gameObject.GetComponent<PizzaPickupController>().numberOfPizzas;
 			pizzaBoxManager.AddPizzaBox(numPizzas);
+			Destroy(other.gameObject);
 		}
 		else if (other.gameObject.tag == "Delivery Spot")
 		{
