@@ -196,6 +196,10 @@ public class PlayerController : MonoBehaviour
 			if(isBraking)
 			{
 				speed -= brakeAmount*Time.deltaTime;
+                if (speed <= 0)
+                {
+                    speed = 0;
+                }
 			}
 
             velocity = groundMovementDirection* speed;

@@ -245,7 +245,7 @@ MonoBehaviour:
   GRAVITY: -1
   speed: 0
   SKIDTHRESHOLD: 5
-  SKIDSPEEDLOSS: 0.5
+  SKIDSPEEDLOSS: 0.1
   ambientSlowDown: 5
   JUMPTIME: 2
   JUMPFORCE: 3
