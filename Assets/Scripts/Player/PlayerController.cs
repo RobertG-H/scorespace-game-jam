@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour
 			speed += MOVEMENTACCEL * Mathf.Abs(rollAngleRad);
 		}
 
-		speed -= ambientSlowDown * Time.deltaTime;
+		speed -= Mathf.Lerp(0f, ambientSlowDown * Time.deltaTime, speed*speed*0.0001f);
 
 
 		Vector3 lastDirection = characterController.velocity.normalized;
