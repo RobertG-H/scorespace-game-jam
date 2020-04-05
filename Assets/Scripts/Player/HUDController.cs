@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class UIController : MonoBehaviour
+public class HUDController : MonoBehaviour
 {
     public PlayerController player;
     public Text speed;
@@ -15,7 +15,7 @@ public class UIController : MonoBehaviour
     {
         if (player == null || speed == null)
         {
-            Debug.LogWarning("UIController is missing references. Check the editor.");
+            Debug.LogWarning("HUDController is missing references. Check the editor.");
             initialized = false;
         }
 
@@ -26,6 +26,6 @@ public class UIController : MonoBehaviour
     {
         if (!initialized) return;
 
-        speed.text = string.Format("Speed: {0}", player.speed);
+        speed.text = string.Format("Speed: {0}", (int)player.speed);
     }
 }
