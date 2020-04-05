@@ -222,7 +222,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 11
   m_Radius: 1.5
-  m_SlopeLimit: 60
+  m_SlopeLimit: 80
   m_StepOffset: 2
   m_SkinWidth: 0.15
   m_MinMoveDistance: 0.001
@@ -253,6 +253,8 @@ MonoBehaviour:
   maxTurnAngleDeg: 2
   baseRaycastDistHeight: 4
   ROLLANGLEDELTADEADZONE: 0.01
+  isBraking: 0
+  brakeAmount: 5
   isDebug: 0
   debugText: {fileID: 0}
   debugImage: {fileID: 0}

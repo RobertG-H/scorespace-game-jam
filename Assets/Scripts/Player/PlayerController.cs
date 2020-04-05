@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private bool isSkidding = false;
     public float SKIDSPEEDLOSS;
 	[SerializeField]
-	public float ambientSlowDown = 3f;
+	private float ambientSlowDown = 3f;
     
     // JUMPING
     private bool isJumping = false;
@@ -42,6 +42,13 @@ public class PlayerController : MonoBehaviour
     public float baseRaycastDistHeight;
     public float ROLLANGLEDELTADEADZONE;
     public float rollAngleDelta {get; private set;}
+
+
+	//BRAKING
+	[SerializeField]
+	private bool isBraking = false;
+	[SerializeField]
+	private float brakeAmount = 5f;
 
 
 
@@ -147,7 +154,6 @@ public class PlayerController : MonoBehaviour
 
 	void UpdateVelocity()
 	{
-
 		// Increase acceleration if rolling in any direction
 		if (rollingDirection != RollDirection.None)
 		{
@@ -187,6 +193,11 @@ public class PlayerController : MonoBehaviour
                 isSkidding = false;
             }
 
+			if(isBraking)
+			{
+				speed -= brakeAmount*Time.deltaTime;
+			}
+
             velocity = groundMovementDirection* speed;
         }
         else
@@ -224,7 +235,6 @@ public class PlayerController : MonoBehaviour
         characterController.Move(frameWiseVelocity);
 
 		lastVelocity = velocity;
-
 	}
 
     void Skid()
@@ -253,6 +263,16 @@ public class PlayerController : MonoBehaviour
         if (!this.isGrounded) return;
         isJumping = true;
     }
+
+	public void Brake()
+	{
+		if (Input.GetKey(KeyCode.Z))
+		{
+			isBraking = true;
+		}
+		else
+			isBraking = false;
+	}
 
     private RaycastHit RayCastGround()
     {

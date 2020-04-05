@@ -19,6 +19,8 @@ public class InputController : MonoBehaviour
     {
         centerScreenX = (Screen.width/2) / Screen.dpi;
         centerScreenY = (Screen.height/2) / Screen.dpi;
+
+		player.Brake();
     }
 
     public void OnMouse(InputAction.CallbackContext context)
