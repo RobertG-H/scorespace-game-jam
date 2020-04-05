@@ -2221,7 +2221,7 @@ PrefabInstance:
     - target: {fileID: 431320007162437463, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
       propertyPath: JUMPFORCE
-      value: 20
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 431320007162437463, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
@@ -2231,7 +2231,7 @@ PrefabInstance:
     - target: {fileID: 431320007162437463, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
       propertyPath: JUMPTIME
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 431320007162437463, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
@@ -2251,7 +2251,7 @@ PrefabInstance:
     - target: {fileID: 431320007162437463, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
       propertyPath: GRAVITY
-      value: -5
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 431320007162437463, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}

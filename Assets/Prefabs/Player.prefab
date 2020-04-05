@@ -239,21 +239,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 379862217165038825}
-  acceleration: 0.4
-  gravity: -20
+  MOVEMENTACCEL: 0.3
+  GRAVITY: -3
   speed: 0
+  SKIDTHRESHOLD: 5
+  SKIDSPEEDLOSS: 0.5
+  JUMPTIME: 2
+  JUMPFORCE: 3
   maxRollAngleDeg: 60
   maxTurnAngleDeg: 2
-  rollDeltaSlowThreshold: 2
-  isSkidding: 0
-  isJumping: 0
-  JUMPFORCE: 100
-  boardAngleRaycastDist: 1
+  boardAngleRaycastDist: 4
+  ROLLANGLEDELTADEADZONE: 0.01
   isDebug: 1
   debugText: {fileID: 0}
   debugImage: {fileID: 0}
-  rollAngleDeltaDeadzone: 0
-  rollAngleDelta: 0
 --- !u!114 &6456387814207315450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,7 +674,7 @@ PrefabInstance:
     - target: {fileID: 6492419113132904917, guid: a47ac10442633794ca688375e2dbb0e0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.0599995
+      value: 3.06
       objectReference: {fileID: 0}
     - target: {fileID: 6493774008608217781, guid: a47ac10442633794ca688375e2dbb0e0,
         type: 3}

@@ -189,6 +189,7 @@ public class PlayerController : MonoBehaviour
         if(characterController.isGrounded)
         {
             lastGroundVel = characterController.velocity;
+            isJumping = false;
         }
     }
 
