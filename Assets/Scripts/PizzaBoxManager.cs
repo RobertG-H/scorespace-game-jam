@@ -57,10 +57,10 @@ public class PizzaBoxManager : MonoBehaviour
         Quaternion newBaseRotation = Quaternion.identity;
         float boardRotX = board.localEulerAngles.x;
 
-        float handrot =  GetHandRotation();
-        float handRotX = Mathf.Lerp(baseXRot, handrot, 1f);
+        float handRotX =  GetHandRotation();
+        // float handRotX = Mathf.Lerp(baseXRot, handRotX, 1f);
 
-        newBaseRotation *= Quaternion.Euler(boardRotX + handRotX, board.localEulerAngles.y, 0);//remove boardrot
+        newBaseRotation *= Quaternion.Euler(handRotX, board.localEulerAngles.y, 0);//remove boardrot
 
         transform.localRotation = Quaternion.Slerp(transform.localRotation, newBaseRotation, boardRotationTracking/(float)pizzaBoxList.Count);
 
