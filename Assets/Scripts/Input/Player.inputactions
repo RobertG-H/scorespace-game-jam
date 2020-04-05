@@ -14,9 +14,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Action",
+                    "name": "Space",
                     "type": "Button",
                     "id": "4c02db41-df35-4d53-9f85-6095dbd33dc1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "W",
+                    "type": "Button",
+                    "id": "3a50c3e8-8d9b-4c34-934e-1e80d87cfab0",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
@@ -38,10 +46,10 @@
                     "name": "",
                     "id": "cc472469-1d03-4bfa-8c42-340d1b5dd470",
                     "path": "<Keyboard>/space",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "MouseAndKeyboard",
-                    "action": "Action",
+                    "action": "Space",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -52,18 +60,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Action",
+                    "action": "Space",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "9ac4e19e-9dab-4b6d-913f-e01da229c8d2",
-                    "path": "<Mouse>/leftButton",
+                    "id": "904ea8a6-349c-4a94-a328-13b30e543d75",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "MouseAndKeyboard",
-                    "action": "Action",
+                    "action": "W",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -30,6 +30,12 @@ public class InputController : MonoBehaviour
 
     public void OnSpace(InputAction.CallbackContext context)
     {
+        if (context.started)
+            player.Jump();
+    }
+
+    public void OnW(InputAction.CallbackContext context)
+    {
         player.Boost();
     }
 }

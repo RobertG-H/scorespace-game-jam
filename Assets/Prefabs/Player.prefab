@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 431320007162437462}
   - component: {fileID: 431320007162437463}
   - component: {fileID: 6456387814207315450}
+  - component: {fileID: 1001368026}
   m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
@@ -174,6 +175,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4c02db41-df35-4d53-9f85-6095dbd33dc1
     m_ActionName: Gameplay/Action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 431320007162437465}
+        m_MethodName: OnW
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3a50c3e8-8d9b-4c34-934e-1e80d87cfab0
+    m_ActionName: Gameplay/Action2[/Keyboard/a]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -203,11 +219,11 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 9.47
-  m_Radius: 1.44
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_Height: 11
+  m_Radius: 1.5
+  m_SlopeLimit: 60
+  m_StepOffset: 2
+  m_SkinWidth: 0.15
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 4, z: 0}
 --- !u!114 &431320007162437463
@@ -223,18 +239,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 379862217165038825}
-  acceleration: 0.4
-  gravity: -30
+  MOVEMENTACCEL: 0.3
+  GRAVITY: -3
   speed: 0
-  maxRollAngleDeg: 45
-  maxTurnAngleDeg: 1
-  rollDeltaSlowThreshold: 2
-  isSkidding: 0
-  isDebug: 0
+  SKIDTHRESHOLD: 5
+  SKIDSPEEDLOSS: 0.5
+  JUMPTIME: 2
+  JUMPFORCE: 3
+  maxRollAngleDeg: 60
+  maxTurnAngleDeg: 2
+  boardAngleRaycastDist: 4
+  ROLLANGLEDELTADEADZONE: 0.01
+  isDebug: 1
   debugText: {fileID: 0}
   debugImage: {fileID: 0}
-  rollAngleDeltaDeadzone: 0
-  rollAngleDelta: 0
 --- !u!114 &6456387814207315450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +266,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pizzaBoxManager: {fileID: 5445626428320264662}
+--- !u!114 &1001368026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431320007162437460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190c62c95c1b8c6439ea21a8d70749e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 431320007162437463}
+  speed: {fileID: 0}
 --- !u!1001 &5090082837300699263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280,6 +312,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 950641314525663657, guid: d5f764b181f07094bab5a724dc0bc09c,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 431320007162437463}
     - target: {fileID: 1652124088314007633, guid: d5f764b181f07094bab5a724dc0bc09c,
         type: 3}
       propertyPath: m_Layer
