@@ -49,16 +49,19 @@ public class PizzaBoxManager : MonoBehaviour
         {
             AddPizzaBox(1);
         }
-        Quaternion baseRotBoard = Quaternion.identity;
-        Quaternion baseRotHand = Quaternion.identity;
+        float baseXRot = transform.localEulerAngles.x;
+        if(baseXRot > 180)
+        {
+            baseXRot -= 360;
+        }
+        Quaternion newBaseRotation = Quaternion.identity;
         float boardRotX = board.localEulerAngles.x;
-        float handRotX = GetHandRotation();
-        Debug.Log(handRotX);
-        baseRotBoard *= Quaternion.Euler(boardRotX, board.localEulerAngles.y, 0);
-        baseRotHand *= Quaternion.Euler(handRotX, board.localEulerAngles.y, 0);
+        float handRotX = Mathf.Lerp(baseXRot, GetHandRotation(), handRotationTracking);
 
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, baseRotBoard, boardRotationTracking/(float)pizzaBoxList.Count);
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, baseRotHand, handRotationTracking/(float)pizzaBoxList.Count);
+        newBaseRotation *= Quaternion.Euler(boardRotX + handRotX, board.localEulerAngles.y, 0);
+
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, newBaseRotation, boardRotationTracking/(float)pizzaBoxList.Count);
+
 
         
         var pizzaBox = pizzaBoxList.First;
@@ -115,16 +118,20 @@ public class PizzaBoxManager : MonoBehaviour
 
     public float GetHandRotation()
     {
-        // return Mathf.Atan2((playerController.mousePos.y) - (Screen.height/2)/Screen.dpi, Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
-        return 18*((playerController.mousePos.y) - (Screen.height/2)/Screen.dpi);
+        //Linear
+        // return 18*((playerController.mousePos.y) - (Screen.height/2)/Screen.dpi);
 
-        // if(playerController.MouseDelta.x >= 0)
-        // {
-        // }
-        // else
-        // {
-        //     return Mathf.Atan2((playerController.MouseDelta.y - Screen.height/2)/Screen.dpi, Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
-        // }
+        if((playerController.mousePos.x) >= 0)
+        {
+            // return -18*(playerController.mousePos.y);
+            return -Mathf.Atan2(playerController.mousePos.y, Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
+
+        }
+        else
+        {
+            // return 18*(playerController.mousePos.y);
+            return Mathf.Atan2(playerController.mousePos.y, Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
+        }
     }
 }  
 
