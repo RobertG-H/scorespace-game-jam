@@ -56,9 +56,11 @@ public class PizzaBoxManager : MonoBehaviour
         }
         Quaternion newBaseRotation = Quaternion.identity;
         float boardRotX = board.localEulerAngles.x;
-        float handRotX = Mathf.Lerp(baseXRot, GetHandRotation(), handRotationTracking);
 
-        newBaseRotation *= Quaternion.Euler(boardRotX + handRotX, board.localEulerAngles.y, 0);
+        float handrot =  GetHandRotation();
+        float handRotX = Mathf.Lerp(baseXRot, handrot, 1f);
+
+        newBaseRotation *= Quaternion.Euler(boardRotX + handRotX, board.localEulerAngles.y, 0);//remove boardrot
 
         transform.localRotation = Quaternion.Slerp(transform.localRotation, newBaseRotation, boardRotationTracking/(float)pizzaBoxList.Count);
 
@@ -118,20 +120,14 @@ public class PizzaBoxManager : MonoBehaviour
 
     public float GetHandRotation()
     {
-        //Linear
-        // return 18*((playerController.mousePos.y) - (Screen.height/2)/Screen.dpi);
+		//Linear
+		// return 18*((playerController.mousePos.y) - (Screen.height/2)/Screen.dpi);
 
-        if((playerController.mousePos.x) >= 0)
-        {
-            // return -18*(playerController.mousePos.y);
-            return -Mathf.Atan2(playerController.mousePos.y*Mathf.Abs(Mathf.Sin(playerController.mousePos.x)), Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
+		float handHeight = playerController.mousePos.y / (Screen.height*0.5f / Screen.dpi);
 
-        }
-        else
-        {
-            // return 18*(playerController.mousePos.y);
-            return Mathf.Atan2(playerController.mousePos.y*Mathf.Abs(Mathf.Sin(playerController.mousePos.x)), Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
-        }
+		handHeight *= playerController.mousePos.x / (Screen.width*0.5f / Screen.dpi);
+
+		return -handHeight*50f;
     }
 }  
 

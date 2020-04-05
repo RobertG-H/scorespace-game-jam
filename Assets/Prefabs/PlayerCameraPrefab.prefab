@@ -203,6 +203,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransfrom: {fileID: 0}
+  xRot: 21
+  xOffsetMax: 5
+  distance: 17
+  distanceMult: 1
 --- !u!114 &6102313132819153409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9824fa64b4c174f87fe24c4001119f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMaxSpeedRangeToAdjustFov: {x: 20, y: 120}
+  minMaxSpeedRangeToAdjustFov: {x: 20, y: 200}
   minMaxFovFromSpeed: {x: 55, y: 95}
-  lerpSpeed: 3.5
+  lerpSpeed: 0.07
   playerController: {fileID: 0}
