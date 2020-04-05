@@ -45,14 +45,15 @@ public class PizzaBoxManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if(Input.GetKeyDown("a"))
-        // {
-        //     AddPizzaBox(1);
-        // }
+        if(Input.GetKeyDown("a"))
+        {
+            AddPizzaBox(1);
+        }
         Quaternion baseRotBoard = Quaternion.identity;
         Quaternion baseRotHand = Quaternion.identity;
         float boardRotX = board.localEulerAngles.x;
         float handRotX = GetHandRotation();
+        Debug.Log(handRotX);
         baseRotBoard *= Quaternion.Euler(boardRotX, board.localEulerAngles.y, 0);
         baseRotHand *= Quaternion.Euler(handRotX, board.localEulerAngles.y, 0);
 
@@ -114,7 +115,8 @@ public class PizzaBoxManager : MonoBehaviour
 
     public float GetHandRotation()
     {
-        return Mathf.Atan2((playerController.MouseDelta.y - Screen.height/2)/Screen.dpi, Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
+        // return Mathf.Atan2((playerController.mousePos.y) - (Screen.height/2)/Screen.dpi, Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
+        return 18*((playerController.mousePos.y) - (Screen.height/2)/Screen.dpi);
 
         // if(playerController.MouseDelta.x >= 0)
         // {
