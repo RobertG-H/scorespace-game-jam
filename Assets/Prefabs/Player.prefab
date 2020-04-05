@@ -240,8 +240,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 379862217165038825}
+  isGrounded: 0
   MOVEMENTACCEL: 0.3
-  GRAVITY: -3
+  GRAVITY: -1
   speed: 0
   SKIDTHRESHOLD: 5
   SKIDSPEEDLOSS: 0.5
@@ -249,7 +250,7 @@ MonoBehaviour:
   JUMPFORCE: 3
   maxRollAngleDeg: 60
   maxTurnAngleDeg: 2
-  boardAngleRaycastDist: 4
+  baseRaycastDistHeight: 4
   ROLLANGLEDELTADEADZONE: 0.01
   isDebug: 0
   debugText: {fileID: 0}
