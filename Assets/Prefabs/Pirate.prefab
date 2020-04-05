@@ -91,6 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4466155615772185539}
   - component: {fileID: 8683023714768982761}
+  - component: {fileID: 2471431435385297806}
   m_Layer: 0
   m_Name: Pirate
   m_TagString: Untagged
@@ -143,6 +144,18 @@ MonoBehaviour:
   LHandTargetBackward: {fileID: 8683023714125208363}
   headRotationOffset: -75
   headTracking: 0.2
+--- !u!114 &2471431435385297806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838128053918982608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7823306145422947a02023d000530df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &874148512013984952
 GameObject:
   m_ObjectHideFlags: 0

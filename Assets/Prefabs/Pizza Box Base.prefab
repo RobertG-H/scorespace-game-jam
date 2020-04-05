@@ -46,9 +46,11 @@ MonoBehaviour:
   pizzaBoxPrefab: {fileID: 3947190886365150745, guid: c8478fb25e14b7d408f04184cc4f0650,
     type: 3}
   board: {fileID: 0}
+  playerController: {fileID: 0}
   flexiness: 1
   dropThreshDist: 0.5
   dropThresAngle: 50
   dropForce: 30
-  baseRotationTracking: 0.5
+  boardRotationTracking: 0.5
+  handRotationTracking: 0.25
   pizzaBoxDestroyDelay: 5
