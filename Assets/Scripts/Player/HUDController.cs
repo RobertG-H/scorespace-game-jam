@@ -8,7 +8,19 @@ public class HUDController : MonoBehaviour
 {
     public PlayerController player;
     public Text speed;
+    public Text score;
     private bool initialized = true;
+
+    void OnEnable()
+    {
+        GameManager.ScoreUpdate += OnScore;
+    }
+
+
+    void OnDisable()
+    {
+        GameManager.ScoreUpdate -= OnScore;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +39,10 @@ public class HUDController : MonoBehaviour
         if (!initialized) return;
 
         speed.text = string.Format("Speed: {0}", (int)player.speed);
+    }
+
+    void OnScore(int scoreNum)
+    {
+        score.text = string.Format("Score: {0}", scoreNum);
     }
 }

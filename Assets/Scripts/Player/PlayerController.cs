@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     public float maxTurnAngleDeg;
     public float baseRaycastDistHeight;
     public float ROLLANGLEDELTADEADZONE;
-    private float rollAngleDelta;
+    public float rollAngleDelta {get; private set;}
 
 
 
