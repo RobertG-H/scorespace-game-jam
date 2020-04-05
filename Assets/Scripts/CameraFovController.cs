@@ -11,7 +11,7 @@ public class CameraFovController : MonoBehaviour
 	[SerializeField]
 	Vector2 minMaxFovFromSpeed = new Vector2(40, 90);
 	[SerializeField]
-	float lerpSpeed=0.6f;
+	float lerpSpeed=1f;
 
 	[SerializeField]
 	PlayerController playerController = null;
@@ -32,7 +32,7 @@ public class CameraFovController : MonoBehaviour
 
 	void HandleFovTransform()
 	{
-		float fov = (playerController.speed - minMaxSpeedRangeToAdjustFov.x) / (minMaxSpeedRangeToAdjustFov.y - minMaxSpeedRangeToAdjustFov.x);
+		float fov = Mathf.Clamp01((playerController.speed - minMaxSpeedRangeToAdjustFov.x) / (minMaxSpeedRangeToAdjustFov.y - minMaxSpeedRangeToAdjustFov.x));
 		fov = fov * (minMaxFovFromSpeed.y - minMaxFovFromSpeed.x) + minMaxFovFromSpeed.x;
 
 		cam.fieldOfView = SoftLerp(cam.fieldOfView, fov, lerpSpeed*Time.deltaTime);

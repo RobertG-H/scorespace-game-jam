@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6084801896040629745}
   - component: {fileID: 6102313132819153409}
   m_Layer: 9
-  m_Name: Camera
+  m_Name: PlayerCameraPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9824fa64b4c174f87fe24c4001119f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMaxSpeedRangeToAdjustFov: {x: 20, y: 120}
-  minMaxFovFromSpeed: {x: 50, y: 80}
+  minMaxSpeedRangeToAdjustFov: {x: 20, y: 100}
+  minMaxFovFromSpeed: {x: 55, y: 80}
+  lerpSpeed: 3
   playerController: {fileID: 0}
