@@ -118,6 +118,18 @@ public class PizzaBoxManager : MonoBehaviour
         }
     }
 
+    public int DeliverAll()
+    {
+        if (pizzaBoxList.Count == 0) return 0;
+        int numPizzas = pizzaBoxList.Count;
+        foreach (PizzaBox box in pizzaBoxList)
+        {
+            Destroy(box.instance);
+        }
+        pizzaBoxList = new LinkedList<PizzaBox>();
+        return numPizzas;
+    }
+
     public float GetHandRotation()
     {
 		//Linear
