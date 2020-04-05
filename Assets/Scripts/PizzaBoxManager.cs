@@ -124,13 +124,13 @@ public class PizzaBoxManager : MonoBehaviour
         if((playerController.mousePos.x) >= 0)
         {
             // return -18*(playerController.mousePos.y);
-            return -Mathf.Atan2(playerController.mousePos.y, Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
+            return -Mathf.Atan2(playerController.mousePos.y*Mathf.Abs(Mathf.Sin(playerController.mousePos.x)), Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
 
         }
         else
         {
             // return 18*(playerController.mousePos.y);
-            return Mathf.Atan2(playerController.mousePos.y, Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
+            return Mathf.Atan2(playerController.mousePos.y*Mathf.Abs(Mathf.Sin(playerController.mousePos.x)), Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
         }
     }
 }  
