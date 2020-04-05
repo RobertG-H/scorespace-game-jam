@@ -24,13 +24,15 @@ public class PizzaBoxManager : MonoBehaviour
     LinkedList<PizzaBox> pizzaBoxList;
     public GameObject pizzaBoxPrefab;
     public Transform board;
+    public PlayerController playerController;
+
     public float flexiness;
     public float dropThreshDist;
     public float dropThresAngle;
     public float dropForce;
-    public float baseRotationTracking;
+    public float boardRotationTracking;
+    public float handRotationTracking;
     public float pizzaBoxDestroyDelay;
-
     private float pizzaBoxHeight;
 
     // Start is called before the first frame update
@@ -38,18 +40,31 @@ public class PizzaBoxManager : MonoBehaviour
     {         
         pizzaBoxHeight = pizzaBoxPrefab.transform.lossyScale.y;
         pizzaBoxList = new LinkedList<PizzaBox>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if(Input.GetKeyDown("a"))
-        // {
-        //     AddPizzaBox(1);
-        // }
+        if(Input.GetKeyDown("a"))
+        {
+            AddPizzaBox(1);
+        }
+        float baseXRot = transform.localEulerAngles.x;
+        if(baseXRot > 180)
+        {
+            baseXRot -= 360;
+        }
+        Quaternion newBaseRotation = Quaternion.identity;
+        float boardRotX = board.localEulerAngles.x;
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, board.rotation, baseRotationTracking/(float)pizzaBoxList.Count);
+        float handrot =  GetHandRotation();
+        float handRotX = Mathf.Lerp(baseXRot, handrot, 1f);
+
+        newBaseRotation *= Quaternion.Euler(boardRotX + handRotX, board.localEulerAngles.y, 0);//remove boardrot
+
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, newBaseRotation, boardRotationTracking/(float)pizzaBoxList.Count);
+
+
         
         var pizzaBox = pizzaBoxList.First;
         int idx = 0;
@@ -102,4 +117,18 @@ public class PizzaBoxManager : MonoBehaviour
             pizzaBoxList.AddLast(new PizzaBox(pizzaBoxInstance, initRotation));
         }
     }
+
+    public float GetHandRotation()
+    {
+		//Linear
+		// return 18*((playerController.mousePos.y) - (Screen.height/2)/Screen.dpi);
+
+		float handHeight = playerController.mousePos.y / (Screen.height*0.5f / Screen.dpi);
+
+		handHeight *= playerController.mousePos.x / (Screen.width*0.5f / Screen.dpi);
+
+		return -handHeight*50f;
+    }
 }  
+
+
