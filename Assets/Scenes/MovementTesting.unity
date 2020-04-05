@@ -1153,7 +1153,7 @@ PrefabInstance:
     - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7030846
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
@@ -1163,7 +1163,7 @@ PrefabInstance:
     - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7111063
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
@@ -1178,7 +1178,7 @@ PrefabInstance:
     - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -89.35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
@@ -1190,31 +1190,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 431320007162437462, guid: e4b6f6bd37d4bf440967f13137e84da3,
-        type: 3}
-      propertyPath: m_Height
-      value: 10.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 431320007162437462, guid: e4b6f6bd37d4bf440967f13137e84da3,
-        type: 3}
-      propertyPath: m_SkinWidth
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 431320007162437462, guid: e4b6f6bd37d4bf440967f13137e84da3,
-        type: 3}
-      propertyPath: m_SlopeLimit
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 431320007162437462, guid: e4b6f6bd37d4bf440967f13137e84da3,
-        type: 3}
-      propertyPath: m_StepOffset
-      value: 2.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 431320007162437463, guid: e4b6f6bd37d4bf440967f13137e84da3,
-        type: 3}
-      propertyPath: debugText
-      value: 
-      objectReference: {fileID: 1267752016}
     - target: {fileID: 431320007162437463, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
       propertyPath: debugImage
@@ -1222,13 +1197,18 @@ PrefabInstance:
       objectReference: {fileID: 1267752017}
     - target: {fileID: 431320007162437463, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
-      propertyPath: RAYCASTDOWNDIST
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 431320007162437463, guid: e4b6f6bd37d4bf440967f13137e84da3,
+      propertyPath: debugText
+      value: 
+      objectReference: {fileID: 1267752016}
+    - target: {fileID: 3402027699958671789, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
-      propertyPath: gravity
-      value: -40
+      propertyPath: m_LocalPosition.y
+      value: 3.0599995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550575967416266973, guid: e4b6f6bd37d4bf440967f13137e84da3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4b6f6bd37d4bf440967f13137e84da3, type: 3}
