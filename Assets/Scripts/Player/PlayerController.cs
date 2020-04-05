@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     public float SKIDTHRESHOLD;
     private bool isSkidding = false;
     public float SKIDSPEEDLOSS;
+	[SerializeField]
+	public float ambientSlowDown = 3f;
     
     // JUMPING
     private bool isJumping = false;
@@ -151,6 +153,9 @@ public class PlayerController : MonoBehaviour
 		{
 			speed += MOVEMENTACCEL * Mathf.Abs(rollAngleRad);
 		}
+
+		speed -= Mathf.Lerp(0f, ambientSlowDown * Time.deltaTime, speed*speed*0.0001f);
+
 
 		Vector3 lastDirection = characterController.velocity.normalized;
 		if (characterController.velocity.sqrMagnitude <= 0f)
