@@ -13,7 +13,7 @@ public class AnimationController : MonoBehaviour
     public Transform LHandTargetForward;
     public Transform LHandTargetBackward;
     public float headRotationOffset;
-    public float headTracking;
+    public float headTracking; 
     private Vector3 initHipsPos;
     private Vector3 initLHandIKPos;
 
@@ -45,7 +45,7 @@ public class AnimationController : MonoBehaviour
         
 
         //Hip positioning
-        hips.localRotation = board.rotation;
+        hips.rotation = board.rotation;
         Vector3 newHipsPos = hips.localPosition;
         newHipsPos.y = initHipsPos.y * Mathf.Cos(boardAngleX*Mathf.Deg2Rad);
         hips.localPosition = newHipsPos;
