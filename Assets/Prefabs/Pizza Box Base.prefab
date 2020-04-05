@@ -52,8 +52,8 @@ MonoBehaviour:
   dropThresAngle: 30
   dropForce: 30
   rollTracking: 0.05
-  rollAngleFlex: 5
-  rollDistFlex: 0.2
-  handRotationTracking: 0.5
-  boardRotationTracking: 0
+  rollAngleFlex: 10
+  rollDistFlex: 0.3
+  handRotationTracking: 1
+  boardRotationTracking: 0.25
   pizzaBoxDestroyDelay: 5

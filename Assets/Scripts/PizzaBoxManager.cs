@@ -59,18 +59,20 @@ public class PizzaBoxManager : MonoBehaviour
         // float baseXRot = transform.localEulerAngles.x;
         float rollAngleDelta = playerController.rollAngleDelta;
         rollModifier = Mathf.Lerp(rollModifier, rollAngleDelta, rollTracking);
+        // rollModifier = 0;
 
 
-        Quaternion newBaseRotation = Quaternion.identity;
         // float handRotX = GetHandRotation()*Time.deltaTime*handRotationTracking/Mathf.Max(1, (float)pizzaBoxList.Count) + baseXRot;
-        // // handRotX = Mathf.Clamp(handRotX, -60, 60);
-        float handRotX = GetHandRotation();
-        // newBaseRotation *= Quaternion.Euler(board.localEulerAngles.x, board.localEulerAngles.y, 0);//remove boardrot
-        // transform.localRotation = Quaternion.Slerp(transform.localRotation, newBaseRotation, boardRotationTracking/(float)pizzaBoxList.Count);
+        // handRotX = Mathf.Clamp(handRotX, -60, 60);
+        Quaternion newBaseRotation = Quaternion.identity;
+        newBaseRotation *= Quaternion.Euler(board.localEulerAngles.x, board.localEulerAngles.y, 0);//remove boardrot
 
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, newBaseRotation, boardRotationTracking/Mathf.Max(1, (float)pizzaBoxList.Count));
+        
+        float handRotX = GetHandRotation();
         newBaseRotation = Quaternion.identity;
         newBaseRotation *= Quaternion.Euler(handRotX, 0, 0);//remove boardrot
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, newBaseRotation, handRotationTracking/(float)pizzaBoxList.Count);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, newBaseRotation, handRotationTracking/Mathf.Max(1, (float)pizzaBoxList.Count));
 
 
         
@@ -79,19 +81,19 @@ public class PizzaBoxManager : MonoBehaviour
         while(pizzaBox != null)
         {
             Quaternion newRotation = Quaternion.identity;
-            newRotation *= Quaternion.Euler(transform.eulerAngles.x + rollModifier*rollAngleFlex, 0, transform.eulerAngles.z);
+            newRotation *= Quaternion.Euler(transform.eulerAngles.x - rollModifier*rollAngleFlex, 0, transform.eulerAngles.z);
             pizzaBox.Value.transform.localRotation = pizzaBox.Value.initRotation * newRotation;
             
             Vector3 newPos = pizzaBox.Value.initPoint;
             newPos.y = (newPos.y) * Mathf.Cos(transform.eulerAngles.x * Mathf.Deg2Rad);
             // newPos.x = (newPos.y - transform.position.y) * (flexiness * idx) * Mathf.Sin(transform.localEulerAngles.z * Mathf.Deg2Rad);
-            newPos.z = (newPos.y) * (flexiness * idx) * Mathf.Sin(transform.eulerAngles.x * Mathf.Deg2Rad) + (rollModifier*idx*rollDistFlex);
+            newPos.z = (newPos.y) * (flexiness * idx) * Mathf.Sin(transform.eulerAngles.x * Mathf.Deg2Rad) - (rollModifier*idx*rollDistFlex);
 
             pizzaBox.Value.transform.localPosition = newPos;
             
             float pizzaBoxXRot = ConvertTo180(pizzaBox.Value.transform.rotation.eulerAngles.x);
  
-            if(pizzaBox != pizzaBoxList.First && Mathf.Abs(pizzaBox.Value.transform.localPosition.z - pizzaBox.Previous.Value.transform.localPosition.z) > dropThreshDist || Mathf.Abs(pizzaBoxXRot) > dropThresAngle)
+            if(pizzaBox != pizzaBoxList.First && pizzaBox.Next == null && Mathf.Abs(pizzaBox.Value.transform.localPosition.z - pizzaBox.Previous.Value.transform.localPosition.z) > dropThreshDist || Mathf.Abs(pizzaBoxXRot) > dropThresAngle)
             {
                 pizzaBox.Value.rb.isKinematic = false;
                 Debug.DrawRay(pizzaBox.Value.transform.position, pizzaBox.Value.transform.rotation * Vector3.up, Color.red, 1.0f);
