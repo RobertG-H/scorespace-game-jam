@@ -32,8 +32,6 @@ public class PizzaBoxManager : MonoBehaviour
     public float dropForce;
     public float boardRotationTracking;
     public float handRotationTracking;
-    public float deadzoneHandThreshold;
-    public float deadzoneHandRotationTracking;
     public float pizzaBoxDestroyDelay;
     private float pizzaBoxHeight;
 
@@ -51,29 +49,19 @@ public class PizzaBoxManager : MonoBehaviour
         {
             AddPizzaBox(1);
         }
-        Quaternion baseRotBoard = Quaternion.identity;
-        Quaternion baseRotHand = Quaternion.identity;
-        float boardRotX = board.localEulerAngles.x;
-        float handRotX = GetHandRotation();
-
-        
-        baseRotBoard *= Quaternion.Euler(boardRotX, board.localEulerAngles.y, 0);
-        baseRotHand *= Quaternion.Euler(handRotX, board.localEulerAngles.y, 0);
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, baseRotBoard, boardRotationTracking/(float)pizzaBoxList.Count);
-
         float baseXRot = transform.localEulerAngles.x;
         if(baseXRot > 180)
         {
             baseXRot -= 360;
         }
-        if(Mathf.Abs(baseXRot) < deadzoneHandThreshold)
-        {
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, baseRotHand, deadzoneHandRotationTracking/(float)pizzaBoxList.Count);
-        }
-        else
-        {
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, baseRotHand, handRotationTracking/(float)pizzaBoxList.Count);
-        }
+        Quaternion newBaseRotation = Quaternion.identity;
+        float boardRotX = board.localEulerAngles.x;
+        float handRotX = Mathf.Lerp(baseXRot, GetHandRotation(), handRotationTracking);
+
+        newBaseRotation *= Quaternion.Euler(boardRotX + handRotX, board.localEulerAngles.y, 0);
+
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, newBaseRotation, boardRotationTracking/(float)pizzaBoxList.Count);
+
 
         
         var pizzaBox = pizzaBoxList.First;
@@ -135,11 +123,13 @@ public class PizzaBoxManager : MonoBehaviour
 
         if((playerController.mousePos.x) >= 0)
         {
+            // return -18*(playerController.mousePos.y);
             return -Mathf.Atan2(playerController.mousePos.y, Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
 
         }
         else
         {
+            // return 18*(playerController.mousePos.y);
             return Mathf.Atan2(playerController.mousePos.y, Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
         }
     }
