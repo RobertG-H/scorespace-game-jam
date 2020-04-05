@@ -232,7 +232,7 @@ public class PlayerController : MonoBehaviour
 
 		Vector3 frameWiseVelocity = velocity*Time.deltaTime;
         
-        characterController.Move(frameWiseVelocity);
+        characterController.Move(frameWiseVelocity*0.2f);
 
 		lastVelocity = velocity;
 	}
