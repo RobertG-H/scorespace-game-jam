@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9824fa64b4c174f87fe24c4001119f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMaxSpeedRangeToAdjustFov: {x: 20, y: 100}
-  minMaxFovFromSpeed: {x: 55, y: 80}
-  lerpSpeed: 3
+  minMaxSpeedRangeToAdjustFov: {x: 20, y: 120}
+  minMaxFovFromSpeed: {x: 55, y: 95}
+  lerpSpeed: 3.5
   playerController: {fileID: 0}

@@ -490,7 +490,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5309
+  m_ColorTemperature: 10697
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -2384,16 +2384,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 369876954926115124, guid: e4b6f6bd37d4bf440967f13137e84da3,
-        type: 3}
-      propertyPath: minMaxSpeedRangeToAdjustFov.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 369876954926115124, guid: e4b6f6bd37d4bf440967f13137e84da3,
-        type: 3}
-      propertyPath: minMaxFovFromSpeed.x
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 431320005606238700, guid: e4b6f6bd37d4bf440967f13137e84da3,
         type: 3}
       propertyPath: m_LocalPosition.x
