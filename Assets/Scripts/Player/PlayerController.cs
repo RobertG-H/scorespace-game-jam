@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public float speed = 0f;
     private Vector3 velocity;
-    private Vector3 lastGroundVel;
+    private Vector3 lastVelocity;
 
     // SKIDDING
     public float SKIDTHRESHOLD;
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        lastGroundVel = transform.forward;
+        lastVelocity = transform.forward;
         currentJumpTime = 0;
     }
 
@@ -152,14 +152,9 @@ public class PlayerController : MonoBehaviour
 			speed += MOVEMENTACCEL * Mathf.Abs(rollAngleRad);
 		}
 
-
-
 		Vector3 lastDirection = characterController.velocity.normalized;
-		Vector3 lastVelocity = characterController.velocity;
 		if (characterController.velocity.sqrMagnitude <= 0f)
 			lastDirection = this.transform.forward;
-
-
 
 		RaycastHit hit = RayCastGround();
 		Vector3 normal = hit.normal;
@@ -175,7 +170,6 @@ public class PlayerController : MonoBehaviour
 		if (this.isGrounded)
         {
 			Vector3 groundMovementDirection = Vector3.ProjectOnPlane(transform.forward, normal).normalized;
-			//Debug.Log("grndmvmntDir " + groundMovementDirection);
 
 			// Slowdown stuff
 			if (!isSkidding && Mathf.Abs(rollAngleDelta) > SKIDTHRESHOLD)
@@ -192,8 +186,23 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            velocity = lastGroundVel;
-            //lastGroundVel.y += GRAVITY;
+            velocity = lastVelocity;
+			Vector3 horzVel = new Vector3(velocity.x, 0f, velocity.z);
+			Vector3 horzDir = horzVel.normalized;
+			float horzSpd = horzVel.magnitude;
+
+			Vector3 horzFwd = new Vector3(transform.forward.x, 0f, transform.forward.z).normalized;
+
+			Vector3 newHorzDir = Vector3.Lerp(horzDir, horzFwd, 0.05f);
+
+			float dotDif = Vector3.Dot(newHorzDir, horzDir);
+
+			dotDif = Mathf.Clamp01(dotDif);
+
+			Vector3 newHorzVel = newHorzDir * dotDif * horzSpd;
+
+			velocity = new Vector3(newHorzVel.x, lastVelocity.y, newHorzVel.z);
+
         }
 
         // Always add gravity
@@ -205,20 +214,11 @@ public class PlayerController : MonoBehaviour
 			velocity.y = 50f;
 		}
 
-
 		Vector3 frameWiseVelocity = velocity*Time.deltaTime;
-
         
         characterController.Move(frameWiseVelocity);
 
-		// Constantly record your ground speed and direction incase you go off an edge.
-		//if(this.isGrounded)
-		//{
-		//    lastGroundVel = characterController.velocity;
-		//    isJumping = false;
-		//}
-
-		lastGroundVel = velocity;
+		lastVelocity = velocity;
 
 	}
 
