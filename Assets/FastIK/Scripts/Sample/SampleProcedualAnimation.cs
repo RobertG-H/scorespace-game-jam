@@ -4,12 +4,12 @@ namespace DitzelGames.FastIK
 {
     class SampleProcedualAnimation :  MonoBehaviour
     {
-        public Transform[] FootTarget;
-        public Transform LookTarget;
-        public Transform HandTarget;
-        public Transform HandPole;
-        public Transform Step;
-        public Transform Attraction;
+        public Transform[] FootTarget = null;
+        public Transform LookTarget =null;
+        public Transform HandTarget = null;
+        public Transform HandPole = null;
+        public Transform Step = null;
+        public Transform Attraction = null;
 
         public void LateUpdate()
         {

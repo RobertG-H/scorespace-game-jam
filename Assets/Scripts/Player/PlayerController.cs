@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public float maxTurnAngleDeg;
     public float rollDeltaSlowThreshold;
     public bool isSkidding = false;
-    private bool isGrounded = false;
+    //private bool isGrounded = false; UNUSED VARIABLE SO I COMMENTED IT OUT - SAM
     RollDirection rollingDirection
     {
         get
@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
     void UpdateVelocity()
     {
         Vector3 moveDirection = transform.forward;
-        float dampVel = 0f;
+        //float dampVel = 0f; UNUSED VARIABLE SO I COMMENTED IT OUT - SAM
 
         // Increase acceleration if rolling in any direction
         if (rollingDirection != RollDirection.None)
