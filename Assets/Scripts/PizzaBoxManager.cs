@@ -24,13 +24,15 @@ public class PizzaBoxManager : MonoBehaviour
     LinkedList<PizzaBox> pizzaBoxList;
     public GameObject pizzaBoxPrefab;
     public Transform board;
+    public PlayerController playerController;
+
     public float flexiness;
     public float dropThreshDist;
     public float dropThresAngle;
     public float dropForce;
-    public float baseRotationTracking;
+    public float boardRotationTracking;
+    public float handRotationTracking;
     public float pizzaBoxDestroyDelay;
-
     private float pizzaBoxHeight;
 
     // Start is called before the first frame update
@@ -38,7 +40,6 @@ public class PizzaBoxManager : MonoBehaviour
     {         
         pizzaBoxHeight = pizzaBoxPrefab.transform.lossyScale.y;
         pizzaBoxList = new LinkedList<PizzaBox>();
-
     }
 
     // Update is called once per frame
@@ -48,8 +49,16 @@ public class PizzaBoxManager : MonoBehaviour
         // {
         //     AddPizzaBox(1);
         // }
+        Quaternion baseRotBoard = Quaternion.identity;
+        Quaternion baseRotHand = Quaternion.identity;
+        float boardRotX = board.localEulerAngles.x;
+        float handRotX = GetHandRotation();
+        baseRotBoard *= Quaternion.Euler(boardRotX, board.localEulerAngles.y, 0);
+        baseRotHand *= Quaternion.Euler(handRotX, board.localEulerAngles.y, 0);
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, board.rotation, baseRotationTracking/(float)pizzaBoxList.Count);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, baseRotBoard, boardRotationTracking/(float)pizzaBoxList.Count);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, baseRotHand, handRotationTracking/(float)pizzaBoxList.Count);
+
         
         var pizzaBox = pizzaBoxList.First;
         int idx = 0;
@@ -102,4 +111,19 @@ public class PizzaBoxManager : MonoBehaviour
             pizzaBoxList.AddLast(new PizzaBox(pizzaBoxInstance, initRotation));
         }
     }
+
+    public float GetHandRotation()
+    {
+        return Mathf.Atan2((playerController.MouseDelta.y - Screen.height/2)/Screen.dpi, Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
+
+        // if(playerController.MouseDelta.x >= 0)
+        // {
+        // }
+        // else
+        // {
+        //     return Mathf.Atan2((playerController.MouseDelta.y - Screen.height/2)/Screen.dpi, Screen.width/2/Screen.dpi) * Mathf.Rad2Deg;
+        // }
+    }
 }  
+
+
