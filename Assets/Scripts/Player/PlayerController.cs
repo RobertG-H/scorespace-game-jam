@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     public float maxTurnAngleDeg;
     public float rollDeltaSlowThreshold;
     public bool isSkidding = false;
-    //private bool isGrounded = false; UNUSED VARIABLE SO I COMMENTED IT OUT - SAM
     RollDirection rollingDirection
     {
         get
@@ -58,7 +57,7 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
-            float currentAngle = Mathf.Atan2(mouseDelta.x, Screen.height);
+            float currentAngle = Mathf.Atan2(mousePos.x, Screen.height/Screen.dpi);
             if (Mathf.Abs(currentAngle) > maxRollAngleDeg * Mathf.Deg2Rad) currentAngle = maxRollAngleDeg * Mathf.Deg2Rad * Mathf.Sign(currentAngle);
             return currentAngle;
         }
@@ -72,27 +71,8 @@ public class PlayerController : MonoBehaviour
             return Mathf.Rad2Deg * rollAngleRad;
         }
     }
-    protected float centerScreenX = 0;
-    public float CenterScreenX
-    {
-        get
-        {
-            return centerScreenX;
-        }
-    }
 
-    protected Vector2 mouseDelta;
-    public Vector2 MouseDelta
-    {
-        get
-        {
-            return mouseDelta;
-        }
-        set
-        {
-            mouseDelta = value;
-        }
-    }
+    public Vector2 mousePos { get; set; }
 
     void Awake()
     {
@@ -103,7 +83,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        centerScreenX = Screen.width/2;
         characterController = GetComponent<CharacterController>();
     }
 
@@ -249,18 +228,12 @@ public class PlayerController : MonoBehaviour
         // Return if not touching sides
         if (characterController.collisionFlags != CollisionFlags.Sides) return;
         speed = 0f;
-
-        // Calculate push direction from move direction,
-        // we only push objects to the sides never up and down
-        // Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
-
-
     }
 
     void UpdateLogger()
     {
         DebugGUI.Graph("rollDeltaGraph",  rollAngleDelta);
         DebugGUI.Graph("velGraph", speed);
-        debugText.text = string.Format("Grounded: {0}\n z-angle: {1}\nCollide: {2}", characterController.isGrounded, board.rotation.eulerAngles.z, characterController.collisionFlags);
+        debugText.text = string.Format("Grounded: {0}\n Mouse: {1}\nCollide: {2}", characterController.isGrounded, mousePos, characterController.collisionFlags);
     }
 }

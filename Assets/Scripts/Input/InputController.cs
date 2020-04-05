@@ -11,16 +11,19 @@ public class InputController : MonoBehaviour
     PlayerController player =null;
     Vector2 mousePosition; 
 
+    protected float centerScreenX = 0;
+
     // Update is called once per frame
     void Update()
     {
+        centerScreenX = (Screen.width/2) / Screen.dpi;
     }
 
     public void OnMouse(InputAction.CallbackContext context)
     {
-        mousePosition = context.ReadValue<Vector2>();
-        Vector2 delta = new Vector2(mousePosition.x - player.CenterScreenX, mousePosition.y);
-        player.MouseDelta = delta; 
+        mousePosition = context.ReadValue<Vector2>() / Screen.dpi;
+        Vector2 delta = new Vector2(mousePosition.x - centerScreenX, mousePosition.y);
+        player.mousePos = delta; 
     }
 
     public void OnSpace(InputAction.CallbackContext context)
