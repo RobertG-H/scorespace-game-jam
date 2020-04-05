@@ -246,6 +246,7 @@ MonoBehaviour:
   speed: 0
   SKIDTHRESHOLD: 5
   SKIDSPEEDLOSS: 0.5
+  ambientSlowDown: 5
   JUMPTIME: 2
   JUMPFORCE: 3
   maxRollAngleDeg: 60
@@ -282,6 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 431320007162437463}
   speed: {fileID: 1108397168076763330}
+  score: {fileID: 0}
 --- !u!1001 &3663616601663524921
 PrefabInstance:
   m_ObjectHideFlags: 0
