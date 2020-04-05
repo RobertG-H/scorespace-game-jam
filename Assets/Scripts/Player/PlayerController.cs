@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     public Transform board;
     public Vector2 mousePos { get; set; }
 
+	[SerializeField]
+	private bool isGrounded = false;
+
     // VELOCITY
     public float MOVEMENTACCEL;
     public float GRAVITY;
@@ -34,9 +37,11 @@ public class PlayerController : MonoBehaviour
     private float prevRollAngleRad = 0f;
     public float maxRollAngleDeg;
     public float maxTurnAngleDeg;
-    public float boardAngleRaycastDist;
+    public float baseRaycastDistHeight;
     public float ROLLANGLEDELTADEADZONE;
     public float rollAngleDelta {get; private set;}
+
+
 
     RollDirection rollingDirection
     {
@@ -138,19 +143,42 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void UpdateVelocity()
-    {
-        // Increase acceleration if rolling in any direction
-        if (rollingDirection != RollDirection.None)
-        {
-            speed += MOVEMENTACCEL * Mathf.Abs(rollAngleRad);
-        }
+	void UpdateVelocity()
+	{
 
-        // Calculate ground or air movement
-        if(characterController.isGrounded)
+		// Increase acceleration if rolling in any direction
+		if (rollingDirection != RollDirection.None)
+		{
+			speed += MOVEMENTACCEL * Mathf.Abs(rollAngleRad);
+		}
+
+
+
+		Vector3 lastDirection = characterController.velocity.normalized;
+		Vector3 lastVelocity = characterController.velocity;
+		if (characterController.velocity.sqrMagnitude <= 0f)
+			lastDirection = this.transform.forward;
+
+
+
+		RaycastHit hit = RayCastGround();
+		Vector3 normal = hit.normal;
+		bool rayIsGrounded = normal != Vector3.zero;
+
+		float groundDotHit = Vector3.Dot(normal, lastDirection);
+
+		this.isGrounded = rayIsGrounded && groundDotHit <= 0.01f;
+		if (!this.isGrounded)
+			Debug.Log(rayIsGrounded + " << rayhit      groundDotHit > " + (groundDotHit <= 0) + "\n " + groundDotHit);
+
+		// Calculate ground or air movement
+		if (this.isGrounded)
         {
-            // Slowdown stuff
-            if (!isSkidding && Mathf.Abs(rollAngleDelta) > SKIDTHRESHOLD)
+			Vector3 groundMovementDirection = Vector3.ProjectOnPlane(transform.forward, normal).normalized;
+			//Debug.Log("grndmvmntDir " + groundMovementDirection);
+
+			// Slowdown stuff
+			if (!isSkidding && Mathf.Abs(rollAngleDelta) > SKIDTHRESHOLD)
             {
                 isSkidding = true;
                 Skid();
@@ -160,38 +188,39 @@ public class PlayerController : MonoBehaviour
                 isSkidding = false;
             }
 
-            velocity = transform.forward*speed*Time.deltaTime;
+            velocity = groundMovementDirection* speed;
         }
         else
         {
-            velocity = lastGroundVel * Time.deltaTime;
-            lastGroundVel.y += GRAVITY;
+            velocity = lastGroundVel;
+            //lastGroundVel.y += GRAVITY;
         }
 
-        // Check Jumping
-        if(isJumping)
-        {
-            currentJumpTime += Time.deltaTime;
-            velocity.y += JUMPFORCE*Time.deltaTime*(JUMPTIME/currentJumpTime);
-            if (currentJumpTime >= JUMPTIME) isJumping = false;
-        }
-        else
-        {
-            currentJumpTime = 0;
-        }
-        
         // Always add gravity
-        velocity.y += GRAVITY*Time.deltaTime;
-        
-        characterController.Move(velocity);
+        velocity.y += GRAVITY;
 
-        // Constantly record your ground speed and direction incase you go off an edge.
-        if(characterController.isGrounded)
-        {
-            lastGroundVel = characterController.velocity;
-            isJumping = false;
-        }
-    }
+		if (isJumping)
+		{
+			isJumping = false;
+			velocity.y = 50f;
+		}
+
+
+		Vector3 frameWiseVelocity = velocity*Time.deltaTime;
+
+        
+        characterController.Move(frameWiseVelocity);
+
+		// Constantly record your ground speed and direction incase you go off an edge.
+		//if(this.isGrounded)
+		//{
+		//    lastGroundVel = characterController.velocity;
+		//    isJumping = false;
+		//}
+
+		lastGroundVel = velocity;
+
+	}
 
     void Skid()
     {
@@ -216,7 +245,7 @@ public class PlayerController : MonoBehaviour
     public void Jump()
     {
         if (isJumping) return;
-        if (!characterController.isGrounded) return; 
+        if (!this.isGrounded) return;
         isJumping = true;
     }
 
@@ -226,15 +255,21 @@ public class PlayerController : MonoBehaviour
         layerMask += 1 << LayerMask.NameToLayer("Player");
         layerMask = ~layerMask;
         Vector3 currentPos = transform.position;
-        RaycastHit hit;
-        if (Physics.Raycast(currentPos, transform.TransformDirection(Vector3.down), out hit, boardAngleRaycastDist, layerMask))
+
+		RaycastHit hit;
+
+		float raycastDistBasedOnAngle = Mathf.Abs(1f/-this.transform.up.y);
+		raycastDistBasedOnAngle = baseRaycastDistHeight * raycastDistBasedOnAngle;
+
+
+        if (Physics.Raycast(currentPos, -transform.up, out hit, raycastDistBasedOnAngle, layerMask))
         {
-            Debug.DrawRay(currentPos, transform.TransformDirection(Vector3.down) * boardAngleRaycastDist, Color.red);
+            Debug.DrawRay(currentPos, -transform.up* hit.distance, Color.red);
             return hit;
         }
         else
         {
-            Debug.DrawRay(currentPos, transform.TransformDirection(Vector3.down) * 5.0f, Color.yellow);
+            Debug.DrawRay(currentPos, -transform.up* 5.0f, Color.yellow);
             return hit;
         }
     }

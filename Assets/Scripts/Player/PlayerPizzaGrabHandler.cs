@@ -9,13 +9,14 @@ public class PlayerPizzaGrabHandler : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		Debug.Log("Pizza");
 		if (other.gameObject.tag == "Pizza Pickup")
 		{
 			int numPizzas = other.gameObject.GetComponent<PizzaPickupController>().numberOfPizzas;
 			pizzaBoxManager.AddPizzaBox(numPizzas);
-
-			Destroy(other.gameObject);
+		}
+		else if (other.gameObject.tag == "Delivery Spot")
+		{
+			GameManager.Instance.AddScore( pizzaBoxManager.DeliverAll());
 		}
 	}
 
