@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DeliverySpotManager : MonoBehaviour
 {
+
+    public delegate void OnDeliverySpotUpdate(Transform position);
+    public static event OnDeliverySpotUpdate deliverySpotUpdate;
     struct DeliverySpot
     {
         public DeliverySpot(GameObject instance)
@@ -39,6 +42,7 @@ public class DeliverySpotManager : MonoBehaviour
         DeactiveAll();
         activeSpot = deliverySpotList.First;
         activeSpot.Value.instance.SetActive(true);
+        deliverySpotUpdate(activeSpot.Value.instance.transform);
         Invoke("ActivateNext", spotChangeTime);
     }
 
@@ -53,6 +57,7 @@ public class DeliverySpotManager : MonoBehaviour
         }
         activeSpot = nextSpot;
         activeSpot.Value.instance.SetActive(true);
+        deliverySpotUpdate(activeSpot.Value.instance.transform);
         Invoke("ActivateNext", spotChangeTime);
     }
 

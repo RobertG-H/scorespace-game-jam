@@ -648,6 +648,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1865666426, guid: adfcd7f305ead6e458fb9c91f71cf8d0, type: 3}
+      propertyPath: spotChangeTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1920870167640411641, guid: adfcd7f305ead6e458fb9c91f71cf8d0,
         type: 3}
       propertyPath: m_LocalPosition.x
