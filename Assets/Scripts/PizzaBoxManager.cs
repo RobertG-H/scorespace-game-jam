@@ -53,10 +53,6 @@ public class PizzaBoxManager : MonoBehaviour
     void Update()
     {
         if(playerController.isPaused) return;
-        if(Input.GetKeyDown("a"))
-        {
-            AddPizzaBox(1);
-        }
 
 
         // float baseXRot = transform.localEulerAngles.x;
