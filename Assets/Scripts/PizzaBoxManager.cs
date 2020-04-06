@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PizzaBoxManager : MonoBehaviour
 {
+    public delegate void OnPizzaBoxListUpdate(int count);
+    public static event OnPizzaBoxListUpdate pizzaBoxUpdate;
     struct PizzaBox
     {
         public PizzaBox(GameObject instance, Quaternion initRotation)
@@ -43,17 +45,14 @@ public class PizzaBoxManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {         
-        pizzaBoxHeight = pizzaBoxPrefab.transform.lossyScale.y;
+        pizzaBoxHeight = 0.07f;//pizzaBoxPrefab.transform.lossyScale.y;
         pizzaBoxList = new LinkedList<PizzaBox>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("a"))
-        {
-            AddPizzaBox(1);
-        }
+        if(playerController.isPaused) return;
 
 
         // float baseXRot = transform.localEulerAngles.x;
@@ -103,6 +102,8 @@ public class PizzaBoxManager : MonoBehaviour
                 pizzaBoxList.Remove(pizzaBox);
                 Destroy(pizzaBox.Value.instance, pizzaBoxDestroyDelay);
                 pizzaBox = temp.Next;   
+                pizzaBoxUpdate(pizzaBoxList.Count);
+                playerController.sFXManager.playSound("pizza_drop");
             }
             else
             {
@@ -123,6 +124,8 @@ public class PizzaBoxManager : MonoBehaviour
             pizzaBoxInstance.transform.parent = transform;
             pizzaBoxList.AddLast(new PizzaBox(pizzaBoxInstance, initRotation));
         }
+        playerController.sFXManager.playSound("pizza_pickup");
+        pizzaBoxUpdate(pizzaBoxList.Count);
     }
     public int DeliverAll()
     {
@@ -133,6 +136,7 @@ public class PizzaBoxManager : MonoBehaviour
             Destroy(box.instance);
         }
         pizzaBoxList = new LinkedList<PizzaBox>();
+        playerController.sFXManager.playSound("pizza_deliver");
         return numPizzas;
     }
 

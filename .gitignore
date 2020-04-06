@@ -40,3 +40,4 @@ sysinfo.txt
 /.vscode/
 /Assets/TextMesh*Pro/
 /Assets/TextMesh*Pro.meta
+/ProjectSettings/Packages/com.unity.probuilder/Settings.json

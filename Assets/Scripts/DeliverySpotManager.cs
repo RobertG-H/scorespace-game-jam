@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DeliverySpotManager : MonoBehaviour
 {
+
+    public delegate void OnDeliverySpotUpdate(Transform position);
+    public static event OnDeliverySpotUpdate deliverySpotUpdate;
     struct DeliverySpot
     {
         public DeliverySpot(GameObject instance)
@@ -21,12 +24,27 @@ public class DeliverySpotManager : MonoBehaviour
 
     public GameObject deliverySpotPrefab;
     public List<Transform> deliverySpotLocations;
-    public float spotChangeTime;
+    // public float spotChangeTime;
+    private float elapsedTime = 0;
 
+    private bool isPaused = false;
 
     void Awake()
     {
         deliverySpotList = new LinkedList<DeliverySpot>();
+    }
+
+    void OnEnable()
+    {
+       /// GameManager.pauseUpdate += UpdatePause;
+        GameManager.ScoreUpdate += ActivateNext;
+    }
+
+    void OnDisable()
+    {
+       // GameManager.pauseUpdate -= UpdatePause;
+        GameManager.ScoreUpdate -= ActivateNext;
+
     }
 
     void Start()
@@ -39,12 +57,22 @@ public class DeliverySpotManager : MonoBehaviour
         DeactiveAll();
         activeSpot = deliverySpotList.First;
         activeSpot.Value.instance.SetActive(true);
-        Invoke("ActivateNext", spotChangeTime);
+        deliverySpotUpdate(activeSpot.Value.instance.transform);
+        // Invoke("ActivateNext", spotChangeTime);
     }
 
-    void ActivateNext()
+    void Update()
     {
-        Debug.Log("Moving Delivery Spot");
+        // if(isPaused)
+        // {
+        //     CancelInvoke("ActivateNext");
+        // }
+        // else
+        //     elapsedTime += Time.deltaTime;
+    }
+
+    void ActivateNext(int score)
+    {
         activeSpot.Value.instance.SetActive(false);
         LinkedListNode<DeliverySpot> nextSpot = activeSpot.Next;
         if (nextSpot == null)
@@ -53,7 +81,9 @@ public class DeliverySpotManager : MonoBehaviour
         }
         activeSpot = nextSpot;
         activeSpot.Value.instance.SetActive(true);
-        Invoke("ActivateNext", spotChangeTime);
+        elapsedTime = 0;
+        deliverySpotUpdate(activeSpot.Value.instance.transform);
+        // Invoke("ActivateNext", spotChangeTime);
     }
 
     void DeactiveAll()
@@ -61,6 +91,15 @@ public class DeliverySpotManager : MonoBehaviour
         foreach(DeliverySpot ds in deliverySpotList)
         {
             ds.instance.SetActive(false);
+        }
+    }
+
+    void UpdatePause(bool status)
+    {
+        isPaused = status;
+        if (!isPaused)
+        {
+            // Invoke("ActivateNext", spotChangeTime - elapsedTime);
         }
     }
 

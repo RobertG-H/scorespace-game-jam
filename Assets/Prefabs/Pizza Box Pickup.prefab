@@ -126,8 +126,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.751123, y: 1.7870226, z: 3.7334685}
-  m_Center: {x: 0.057070255, y: 0.22344017, z: -0.16649961}
+  m_Size: {x: 1.2893107, y: 0.8152659, z: 1.5183405}
+  m_Center: {x: -0.010382295, y: 0.2349149, z: 0.01607424}
 --- !u!1001 &9032457907363788419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ PrefabInstance:
     - target: {fileID: 3800363731115721619, guid: 5f7fd49316856e24a8f4d64cd99adb16,
         type: 3}
       propertyPath: m_Name
-      value: First Pizza Box
+      value: Pizza Box Pickupextra
       objectReference: {fileID: 0}
     - target: {fileID: 3800363731115721631, guid: 5f7fd49316856e24a8f4d64cd99adb16,
         type: 3}

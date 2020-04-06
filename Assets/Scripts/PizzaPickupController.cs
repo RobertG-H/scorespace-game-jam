@@ -15,7 +15,7 @@ public class PizzaPickupController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {        
-        float pizzaBoxHeight = firstPizzaBox.transform.lossyScale.y;
+        float pizzaBoxHeight = 0.14f;//firstPizzaBox.transform.lossyScale.y;
         for(int i = 0; i < numberOfPizzas-1; i++)
         {
             GameObject pizzaBoxInstance = Instantiate(pizzaBoxPrefab, firstPizzaBox.transform.position + new Vector3(0, (i+1) * (pizzaBoxHeight), 0), Quaternion.Euler(Vector3.up * Random.Range(-5, 5)));

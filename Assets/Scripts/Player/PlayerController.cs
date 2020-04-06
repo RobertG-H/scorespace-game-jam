@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
 	[SerializeField]
 	private bool isGrounded = false;
-
+    public bool isPaused = false;
     // VELOCITY
     public float MOVEMENTACCEL;
     public float GRAVITY;
@@ -21,19 +21,22 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private Vector3 lastVelocity;
 
+	[Space]
+
     // SKIDDING
     public float SKIDTHRESHOLD;
     private bool isSkidding = false;
     public float SKIDSPEEDLOSS;
 	[SerializeField]
-	public float ambientSlowDown = 3f;
+	private float ambientSlowDown = 3f;
     
     // JUMPING
     private bool isJumping = false;
-    private float currentJumpTime;
-    public float JUMPTIME;
+  //  private float currentJumpTime;
+  //  public float JUMPTIME;
     public float JUMPFORCE;
 
+	[Space]
 
     // ANGLES
     private float prevRollAngleRad = 0f;
@@ -43,6 +46,17 @@ public class PlayerController : MonoBehaviour
     public float ROLLANGLEDELTADEADZONE;
     public float rollAngleDelta {get; private set;}
 
+	[Space]
+
+	//BRAKING
+	[SerializeField]
+	private bool isBraking = false;
+	[SerializeField]
+	private float brakeAmount = 5f;
+	[SerializeField]
+	private float brakeTurnAngleAdjust = 2f;
+
+	private BoardLightController boardlight;
 
 
     RollDirection rollingDirection
@@ -64,7 +78,8 @@ public class PlayerController : MonoBehaviour
         get
         {
             float currentAngle = Mathf.Atan2(mousePos.x, Screen.height/Screen.dpi);
-            if (Mathf.Abs(currentAngle) > maxRollAngleDeg * Mathf.Deg2Rad) currentAngle = maxRollAngleDeg * Mathf.Deg2Rad * Mathf.Sign(currentAngle);
+            if (Mathf.Abs(currentAngle) > maxRollAngleDeg * Mathf.Deg2Rad)
+				currentAngle = maxRollAngleDeg * Mathf.Deg2Rad * Mathf.Sign(currentAngle);
             return currentAngle;
         }
 
@@ -78,30 +93,45 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Audio
+    public SFXManager sFXManager;
+
     // Debuging tools
     public bool isDebug;
     public Text debugText;
     public Image debugImage;
 
+    void OnEnable()
+    {
+        GameManager.pauseUpdate += UpdatePause;
+    }
+
+    void OnDisable()
+    {
+        GameManager.pauseUpdate -= UpdatePause;
+    }
+
     void Awake()
     {
+		boardlight = Object.FindObjectOfType<BoardLightController>();
         if (isDebug)
         {
             DebugGUI.SetGraphProperties("rollDeltaGraph", "RollDelta", 0f, SKIDTHRESHOLD, 3, new Color(1, 1, 0), false);
             DebugGUI.SetGraphProperties("velGraph", "Vel", 0, 120, 2, new Color(1, 0.5f, 1), false);
         }
+        sFXManager = GetComponent<SFXManager>();
     }
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         lastVelocity = transform.forward;
-        currentJumpTime = 0;
     }
 
 
     void Update()
     {
+        if(isPaused) return;
         UpdateRollAngleDelta();
         UpdateRotation();
         UpdateVelocity();
@@ -120,8 +150,16 @@ public class PlayerController : MonoBehaviour
 
     void UpdateRotation()
     {
-        // Update player yaw based on rollangle
-        float yawUpdate = Mathf.Lerp(0,maxTurnAngleDeg,Mathf.Abs(rollAngleDeg)/maxRollAngleDeg) * Mathf.Sign(rollAngleDeg); 
+		// Update player yaw based on rollangle
+
+		float maxTurnAngle = maxTurnAngleDeg;
+
+		if (isBraking)
+			maxTurnAngle += brakeTurnAngleAdjust;
+
+		// float yawUpdate = Mathf.Lerp(0,maxTurnAngleDeg,Mathf.Abs(rollAngleDeg)/maxRollAngleDeg) * Mathf.Sign(rollAngleDeg); 
+        float yawUpdate = Mathf.Lerp(0,maxTurnAngle,Mathf.Abs(rollAngleDeg)/maxRollAngleDeg) * Mathf.Sign(rollAngleDeg); //Brake allows sharper turns
+
         transform.Rotate(0,yawUpdate,0,Space.World);
 
         // Update board roll
@@ -144,18 +182,44 @@ public class PlayerController : MonoBehaviour
         board.rotation = Quaternion.Euler(board.rotation.eulerAngles.x, board.rotation.eulerAngles.y, moveAngle);
     }
 
+	float sechHack(float x)
+	{
+		float e = 2.71828f;
+		float e2x = Mathf.Pow(e, x);
+		if (e2x == 0)
+			return 1f;
+
+		return 2f/(e2x + 1f / e2x);
+	}
 
 	void UpdateVelocity()
 	{
-
-		// Increase acceleration if rolling in any direction
-		if (rollingDirection != RollDirection.None)
+		float charSpeed = characterController.velocity.magnitude * 5.1f;
+		if (charSpeed < speed)
 		{
-			speed += MOVEMENTACCEL * Mathf.Abs(rollAngleRad);
+			speed = Mathf.MoveTowards(speed, charSpeed, 50f * Time.deltaTime);
 		}
 
-		speed -= Mathf.Lerp(0f, ambientSlowDown * Time.deltaTime, speed*speed*0.0001f);
+		// Increase acceleration if rolling in any direction
+		//if (rollingDirection != RollDirection.None)
+		//{
+			float accelmod = Mathf.Clamp01(speed * 0.005f);
 
+			float actualAccel = MOVEMENTACCEL -accelmod*accelmod *0.3f;
+
+			float accelFromMouse = (1f - rollAngleDelta * rollAngleDelta * 0.8f);
+			accelFromMouse *= 1f - (sechHack(rollAngleDelta * 10f));
+
+			accelFromMouse = Mathf.Max(-5f, accelFromMouse);
+
+			boardlight.SetGradLevel(accelFromMouse, accelmod);
+
+
+			speed += actualAccel * accelFromMouse;
+			speed = Mathf.Max(0f, speed);
+	//	}
+
+		speed -= Mathf.Lerp(0f, ambientSlowDown * Time.deltaTime, speed*speed*0.0002f);
 
 		Vector3 lastDirection = characterController.velocity.normalized;
 		if (characterController.velocity.sqrMagnitude <= 0f)
@@ -168,8 +232,8 @@ public class PlayerController : MonoBehaviour
 		float groundDotHit = Vector3.Dot(normal, lastDirection);
 
 		this.isGrounded = rayIsGrounded && groundDotHit <= 0.01f;
-		if (!this.isGrounded)
-			Debug.Log(rayIsGrounded + " << rayhit      groundDotHit > " + (groundDotHit <= 0) + "\n " + groundDotHit);
+		// if (!this.isGrounded)
+		// 	Debug.Log(rayIsGrounded + " << rayhit      groundDotHit > " + (groundDotHit <= 0) + "\n " + groundDotHit);
 
 		// Calculate ground or air movement
 		if (this.isGrounded)
@@ -180,12 +244,21 @@ public class PlayerController : MonoBehaviour
 			if (!isSkidding && Mathf.Abs(rollAngleDelta) > SKIDTHRESHOLD)
             {
                 isSkidding = true;
-                Skid();
+              //  Skid();
             }
             if ( Mathf.Abs(rollAngleDelta) < SKIDTHRESHOLD)
             {
                 isSkidding = false;
             }
+
+			if(isBraking)
+			{
+				speed -= brakeAmount*Time.deltaTime;
+                if (speed <= 0)
+                {
+                    speed = 0;
+                }
+			}
 
             velocity = groundMovementDirection* speed;
         }
@@ -216,15 +289,14 @@ public class PlayerController : MonoBehaviour
 		if (isJumping)
 		{
 			isJumping = false;
-			velocity.y = 50f;
+			velocity.y = JUMPFORCE;
 		}
 
 		Vector3 frameWiseVelocity = velocity*Time.deltaTime;
         
-        characterController.Move(frameWiseVelocity);
+        characterController.Move(frameWiseVelocity*0.2f);
 
 		lastVelocity = velocity;
-
 	}
 
     void Skid()
@@ -241,10 +313,7 @@ public class PlayerController : MonoBehaviour
 
     public void Boost()
     {
-        if (speed < 100)
-        {
-            speed = 100;
-        }
+            // speed += 100f*Time.deltaTime;
     }
 
     public void Jump()
@@ -252,7 +321,29 @@ public class PlayerController : MonoBehaviour
         if (isJumping) return;
         if (!this.isGrounded) return;
         isJumping = true;
+        sFXManager.playSound("jump");
     }
+
+	public void Brake()
+	{
+		if (Input.GetKey(KeyCode.Z))
+		{
+			isBraking = true;
+		}
+		else
+			isBraking = false;
+	}
+
+    public void Reset()
+    {   
+        characterController.enabled = false;
+        transform.localRotation = Quaternion.identity;
+        transform.localPosition = Vector3.zero;
+        velocity = Vector3.zero;
+        lastVelocity = Vector3.zero;
+        speed = 0;
+        characterController.enabled = true;
+    }   
 
     private RaycastHit RayCastGround()
     {
@@ -274,7 +365,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.DrawRay(currentPos, -transform.up* 5.0f, Color.yellow);
+            Debug.DrawRay(currentPos, -transform.up*hit.distance, Color.yellow);
             return hit;
         }
     }
@@ -294,10 +385,16 @@ public class PlayerController : MonoBehaviour
         // speed = 0f;
     }
 
+
+    public void UpdatePause(bool status)
+    {
+        isPaused = status;
+    }
+
     void UpdateLogger()
     {
         DebugGUI.Graph("rollDeltaGraph",  Mathf.Abs(rollAngleDelta));
         DebugGUI.Graph("velGraph", speed);
-        debugText.text = string.Format("Grounded: {0}\n rollAngleDelta: {1}\n Overshoot: {2}", characterController.isGrounded, rollAngleDelta,  (rollAngleDelta - SKIDTHRESHOLD) / SKIDTHRESHOLD);
+        debugText.text = string.Format("Grounded: {0}\n rollAngleDelta: {1}\n Overshoot: {2}", this.isGrounded, rollAngleDelta,  (rollAngleDelta - SKIDTHRESHOLD) / SKIDTHRESHOLD);
     }
 }
