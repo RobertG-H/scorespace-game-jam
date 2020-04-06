@@ -252,7 +252,7 @@ MonoBehaviour:
   JUMPFORCE: 3
   maxRollAngleDeg: 60
   maxTurnAngleDeg: 2
-  baseRaycastDistHeight: 1.5
+  baseRaycastDistHeight: 0.6
   ROLLANGLEDELTADEADZONE: 0.01
   isBraking: 0
   brakeAmount: 70

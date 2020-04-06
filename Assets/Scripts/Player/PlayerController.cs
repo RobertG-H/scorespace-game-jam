@@ -295,7 +295,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.DrawRay(currentPos, -transform.up* 5.0f, Color.yellow);
+            Debug.DrawRay(currentPos, -transform.up*hit.distance, Color.yellow);
             return hit;
         }
     }
@@ -319,6 +319,6 @@ public class PlayerController : MonoBehaviour
     {
         DebugGUI.Graph("rollDeltaGraph",  Mathf.Abs(rollAngleDelta));
         DebugGUI.Graph("velGraph", speed);
-        debugText.text = string.Format("Grounded: {0}\n rollAngleDelta: {1}\n Overshoot: {2}", characterController.isGrounded, rollAngleDelta,  (rollAngleDelta - SKIDTHRESHOLD) / SKIDTHRESHOLD);
+        debugText.text = string.Format("Grounded: {0}\n rollAngleDelta: {1}\n Overshoot: {2}", this.isGrounded, rollAngleDelta,  (rollAngleDelta - SKIDTHRESHOLD) / SKIDTHRESHOLD);
     }
 }
