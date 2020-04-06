@@ -889,6 +889,11 @@ PrefabInstance:
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 
       objectReference: {fileID: 8888244749306786748}
+    - target: {fileID: 9062505679043456125, guid: a47ac10442633794ca688375e2dbb0e0,
+        type: 3}
+      propertyPath: m_Sources.Array.data[0].sourceTransform
+      value: 
+      objectReference: {fileID: 8888244749306786748}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a47ac10442633794ca688375e2dbb0e0, type: 3}
 --- !u!4 &3350688755434467204 stripped
