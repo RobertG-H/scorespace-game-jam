@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
 			maxTurnAngle += brakeTurnAngleAdjust;
 
 
-		float yawUpdate = Mathf.Lerp(0,maxTurnAngleDeg,Mathf.Abs(rollAngleDeg)/maxRollAngleDeg) * Mathf.Sign(rollAngleDeg); 
+		float yawUpdate = Mathf.Lerp(0, maxTurnAngle, Mathf.Abs(rollAngleDeg)/maxRollAngleDeg) * Mathf.Sign(rollAngleDeg); 
         transform.Rotate(0,yawUpdate,0,Space.World);
 
         // Update board roll
