@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
 
     public void ReloadLevel()
     {   
-        SceneManager.LoadScene("RLevel");
+        SceneManager.LoadScene("JLevel");
     }
 
     public void ToggleStartUI()
