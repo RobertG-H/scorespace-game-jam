@@ -287,7 +287,7 @@ MonoBehaviour:
   ROLLANGLEDELTADEADZONE: 0.01
   isBraking: 0
   brakeAmount: 30
-  brakeTurnAngleAdjust: 1
+  brakeTurnAngleAdjust: 2
   sFXManager: {fileID: 0}
   isDebug: 0
   debugText: {fileID: 0}
