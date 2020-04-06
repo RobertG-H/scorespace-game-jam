@@ -16,7 +16,7 @@ https://itch.io/jam/scorejam8
 
 Deliver pizzas to the delivery zones! Deliver as fast as you can to get the highest score!
 
-## [Windows Builds (PC and version available)]()
+## [Windows Builds (PC and version available)](https://drive.google.com/file/d/1Vne_Or2FFloBxhVa4EiR240mv-3AlQPk/view?usp=sharing)
 
 ## Controls
 
