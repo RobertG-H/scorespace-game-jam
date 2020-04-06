@@ -6,6 +6,7 @@ public class PlayerPizzaGrabHandler : MonoBehaviour
 {
 
 	public PizzaBoxManager pizzaBoxManager;
+	public ScoreTextController scoreTextController;
 
 	void OnTriggerEnter(Collider other)
 	{
@@ -19,6 +20,7 @@ public class PlayerPizzaGrabHandler : MonoBehaviour
 		{
 			int numPizzas = pizzaBoxManager.DeliverAll();
 			GameManager.Instance.AddScore(numPizzas);
+			scoreTextController.ShowScore(numPizzas);
 			GameManager.Instance.pizzasDelivered += numPizzas;
 		}
 	}
