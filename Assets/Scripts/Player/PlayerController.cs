@@ -77,7 +77,8 @@ public class PlayerController : MonoBehaviour
         get
         {
             float currentAngle = Mathf.Atan2(mousePos.x, Screen.height/Screen.dpi);
-            if (Mathf.Abs(currentAngle) > maxRollAngleDeg * Mathf.Deg2Rad) currentAngle = maxRollAngleDeg * Mathf.Deg2Rad * Mathf.Sign(currentAngle);
+            if (Mathf.Abs(currentAngle) > maxRollAngleDeg * Mathf.Deg2Rad)
+				currentAngle = maxRollAngleDeg * Mathf.Deg2Rad * Mathf.Sign(currentAngle);
             return currentAngle;
         }
 
@@ -189,19 +190,19 @@ public class PlayerController : MonoBehaviour
 			speed = Mathf.MoveTowards(speed, charSpeed, 50f * Time.deltaTime);
 		}
 
-
-
 		// Increase acceleration if rolling in any direction
 		if (rollingDirection != RollDirection.None)
 		{
-			speed += MOVEMENTACCEL * Mathf.Abs(rollAngleRad);
+			float accelmod = Mathf.Clamp01(speed * 0.005f);
+
+
+
+			float actualAccel = MOVEMENTACCEL -accelmod*accelmod *0.3f;
+			speed += actualAccel * (1f-rollAngleDelta*rollAngleDelta*0.8f);
+			speed = Mathf.Max(0f, speed);
 		}
 
-
-		speed -= Mathf.Lerp(0f, ambientSlowDown * Time.deltaTime, speed*speed*0.0001f);
-
-
-
+		speed -= Mathf.Lerp(0f, ambientSlowDown * Time.deltaTime, speed*speed*0.0002f);
 
 		Vector3 lastDirection = characterController.velocity.normalized;
 		if (characterController.velocity.sqrMagnitude <= 0f)
@@ -226,7 +227,7 @@ public class PlayerController : MonoBehaviour
 			if (!isSkidding && Mathf.Abs(rollAngleDelta) > SKIDTHRESHOLD)
             {
                 isSkidding = true;
-                Skid();
+              //  Skid();
             }
             if ( Mathf.Abs(rollAngleDelta) < SKIDTHRESHOLD)
             {

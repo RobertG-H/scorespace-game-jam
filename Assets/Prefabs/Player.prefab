@@ -275,7 +275,7 @@ MonoBehaviour:
   board: {fileID: 379862217165038825}
   isGrounded: 0
   isPaused: 0
-  MOVEMENTACCEL: 0.5
+  MOVEMENTACCEL: 0.8
   GRAVITY: -1.5
   speed: 0
   SKIDTHRESHOLD: 5
@@ -287,8 +287,8 @@ MonoBehaviour:
   baseRaycastDistHeight: 0.6
   ROLLANGLEDELTADEADZONE: 0.01
   isBraking: 0
-  brakeAmount: 70
-  brakeTurnAngleAdjust: 1
+  brakeAmount: 30
+  brakeTurnAngleAdjust: 2
   sFXManager: {fileID: 0}
   isDebug: 0
   debugText: {fileID: 0}
