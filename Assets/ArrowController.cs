@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class ArrowController : MonoBehaviour
 {
-    
+    private float tilt = 5f;
     Transform target;
+
+    public GameObject mesh;
     void OnEnable()
     {
         DeliverySpotManager.deliverySpotUpdate += OnDeliverySpotUpdate;
+        PizzaBoxManager.pizzaBoxUpdate += OnPizzaUpdate;
     }
 
     void OnDisable()
     {
         DeliverySpotManager.deliverySpotUpdate -= OnDeliverySpotUpdate;
+        PizzaBoxManager.pizzaBoxUpdate -= OnPizzaUpdate;
+
     }
 
     void Start()
     {
+        mesh.SetActive(false);
     }
 
     void Update()
@@ -25,13 +31,24 @@ public class ArrowController : MonoBehaviour
         if (target) 
         {
             transform.LookAt(target);
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x - 90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + tilt, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         }
     }
 
     void OnDeliverySpotUpdate(Transform spot)
     {
-        Debug.Log("Updated");
         target = spot;
+    }
+
+    void OnPizzaUpdate(int count)
+    {
+        if (count == 0)
+        {
+            mesh.SetActive(false);
+        }
+        else
+        {
+            mesh.SetActive(true);
+        }
     }
 }

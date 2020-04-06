@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PizzaBoxManager : MonoBehaviour
 {
+    public delegate void OnPizzaBoxListUpdate(int count);
+    public static event OnPizzaBoxListUpdate pizzaBoxUpdate;
     struct PizzaBox
     {
         public PizzaBox(GameObject instance, Quaternion initRotation)
@@ -103,6 +105,7 @@ public class PizzaBoxManager : MonoBehaviour
                 pizzaBoxList.Remove(pizzaBox);
                 Destroy(pizzaBox.Value.instance, pizzaBoxDestroyDelay);
                 pizzaBox = temp.Next;   
+                pizzaBoxUpdate(pizzaBoxList.Count);
             }
             else
             {
@@ -123,6 +126,7 @@ public class PizzaBoxManager : MonoBehaviour
             pizzaBoxInstance.transform.parent = transform;
             pizzaBoxList.AddLast(new PizzaBox(pizzaBoxInstance, initRotation));
         }
+        pizzaBoxUpdate(pizzaBoxList.Count);
     }
     public int DeliverAll()
     {

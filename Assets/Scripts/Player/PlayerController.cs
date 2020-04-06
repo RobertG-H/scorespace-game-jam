@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
 
 	[SerializeField]
 	private bool isGrounded = false;
-
     // VELOCITY
     public float MOVEMENTACCEL;
     public float GRAVITY;
@@ -286,6 +285,17 @@ public class PlayerController : MonoBehaviour
 		else
 			isBraking = false;
 	}
+
+    public void Reset()
+    {   
+        characterController.enabled = false;
+        transform.localRotation = Quaternion.identity;
+        transform.localPosition = Vector3.zero;
+        velocity = Vector3.zero;
+        lastVelocity = Vector3.zero;
+        speed = 0;
+        characterController.enabled = true;
+    }   
 
     private RaycastHit RayCastGround()
     {
