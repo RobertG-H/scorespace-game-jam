@@ -255,7 +255,7 @@ MonoBehaviour:
   ROLLANGLEDELTADEADZONE: 0.01
   isBraking: 0
   brakeAmount: 70
-  brakeTurnAngleAdjust: 2
+  brakeTurnAngleAdjust: 1
   isDebug: 0
   debugText: {fileID: 0}
   debugImage: {fileID: 0}
