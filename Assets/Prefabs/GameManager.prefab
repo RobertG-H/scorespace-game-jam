@@ -151,6 +151,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5963053092564645414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88069843393402785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7270743993824401535
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,10 +316,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 59978165981647537}
     m_Modifications:
-    - target: {fileID: 6561387284131051862, guid: 6993305fc81011c4e9d1df4fd18bc02b,
+    - target: {fileID: 907902631381933865, guid: 6993305fc81011c4e9d1df4fd18bc02b,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 59978165981647502}
+    - target: {fileID: 6561387283754334915, guid: 6993305fc81011c4e9d1df4fd18bc02b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561387283754334915, guid: 6993305fc81011c4e9d1df4fd18bc02b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561387285428396634, guid: 6993305fc81011c4e9d1df4fd18bc02b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561387285428396634, guid: 6993305fc81011c4e9d1df4fd18bc02b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561387285428396634, guid: 6993305fc81011c4e9d1df4fd18bc02b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6561387285566182147, guid: 6993305fc81011c4e9d1df4fd18bc02b,
         type: 3}
@@ -416,6 +456,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7351590537555076848, guid: 6993305fc81011c4e9d1df4fd18bc02b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351590537555076848, guid: 6993305fc81011c4e9d1df4fd18bc02b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6993305fc81011c4e9d1df4fd18bc02b, type: 3}
 --- !u!224 &88069843256207098 stripped
@@ -430,13 +480,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6500482028463076857}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &88069843393402785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6561387285428396632, guid: 6993305fc81011c4e9d1df4fd18bc02b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6500482028463076857}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &88069843393402787 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6561387285428396634, guid: 6993305fc81011c4e9d1df4fd18bc02b,
     type: 3}
   m_PrefabInstance: {fileID: 6500482028463076857}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 88069843393402785}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
