@@ -107,6 +107,7 @@ public class PizzaBoxManager : MonoBehaviour
                 Destroy(pizzaBox.Value.instance, pizzaBoxDestroyDelay);
                 pizzaBox = temp.Next;   
                 pizzaBoxUpdate(pizzaBoxList.Count);
+                playerController.sFXManager.playSound("pizza_drop");
             }
             else
             {
@@ -127,6 +128,7 @@ public class PizzaBoxManager : MonoBehaviour
             pizzaBoxInstance.transform.parent = transform;
             pizzaBoxList.AddLast(new PizzaBox(pizzaBoxInstance, initRotation));
         }
+        playerController.sFXManager.playSound("pizza_pickup");
         pizzaBoxUpdate(pizzaBoxList.Count);
     }
     public int DeliverAll()
@@ -138,6 +140,7 @@ public class PizzaBoxManager : MonoBehaviour
             Destroy(box.instance);
         }
         pizzaBoxList = new LinkedList<PizzaBox>();
+        playerController.sFXManager.playSound("pizza_deliver");
         return numPizzas;
     }
 
