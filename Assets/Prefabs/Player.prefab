@@ -242,7 +242,7 @@ MonoBehaviour:
   board: {fileID: 379862217165038825}
   isGrounded: 0
   MOVEMENTACCEL: 0.3
-  GRAVITY: -1
+  GRAVITY: -3
   speed: 0
   SKIDTHRESHOLD: 5
   SKIDSPEEDLOSS: 0.5
@@ -885,6 +885,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6867151752613792131, guid: a47ac10442633794ca688375e2dbb0e0,
+        type: 3}
+      propertyPath: m_Sources.Array.data[0].sourceTransform
+      value: 
+      objectReference: {fileID: 8888244749306786748}
+    - target: {fileID: 9062505679043456125, guid: a47ac10442633794ca688375e2dbb0e0,
         type: 3}
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 

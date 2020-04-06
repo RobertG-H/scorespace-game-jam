@@ -93,7 +93,7 @@ namespace Smrvfx
 
         #endregion
 
-        #region Private methods
+			#region Private methods
 
         void TransferData()
         {

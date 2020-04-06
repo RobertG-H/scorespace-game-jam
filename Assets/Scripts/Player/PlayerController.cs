@@ -251,10 +251,7 @@ public class PlayerController : MonoBehaviour
 
     public void Boost()
     {
-        if (speed < 100)
-        {
-            speed = 100;
-        }
+            speed += 100f*Time.deltaTime;
     }
 
     public void Jump()
