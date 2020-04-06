@@ -48,7 +48,6 @@ public class DeliverySpotManager : MonoBehaviour
 
     void ActivateNext()
     {
-        Debug.Log("Moving Delivery Spot");
         activeSpot.Value.instance.SetActive(false);
         LinkedListNode<DeliverySpot> nextSpot = activeSpot.Next;
         if (nextSpot == null)
