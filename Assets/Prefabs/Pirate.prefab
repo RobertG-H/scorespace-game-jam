@@ -1749,6 +1749,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Board Mesh
       objectReference: {fileID: 0}
+    - target: {fileID: -113181020801827196, guid: f5a202d2c697c974eaca5d04173ab056,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 89b1d7538f1e0274588ddd1141c31dbc, type: 2}
     - target: {fileID: 4224801822505238522, guid: f5a202d2c697c974eaca5d04173ab056,
         type: 3}
       propertyPath: m_IsActive

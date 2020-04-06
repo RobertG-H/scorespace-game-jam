@@ -274,7 +274,7 @@ MonoBehaviour:
   board: {fileID: 379862217165038825}
   isGrounded: 0
   isPaused: 0
-  MOVEMENTACCEL: 0.8
+  MOVEMENTACCEL: 0.73
   GRAVITY: -1.5
   speed: 0
   SKIDTHRESHOLD: 5
