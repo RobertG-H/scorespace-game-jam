@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArrowController : MonoBehaviour
 {
-    private float tilt = 5f;
+    public float tilt = 5f;
     Transform target;
 
     public GameObject mesh;
