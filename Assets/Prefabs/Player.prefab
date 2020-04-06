@@ -52,7 +52,6 @@ GameObject:
   - component: {fileID: 1001368026}
   - component: {fileID: 7530431025025668961}
   - component: {fileID: 1957457241506981223}
-  - component: {fileID: 2177389218574681081}
   m_Layer: 9
   m_Name: Body
   m_TagString: Player
@@ -306,7 +305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pizzaBoxManager: {fileID: 5445626428320264662}
-  scoreTextController: {fileID: 2177389218574681081}
 --- !u!114 &1001368026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,20 +433,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2177389218574681081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431320007162437460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f6543b844851e44a63ee0a5bfb3771, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 1131574978605514841, guid: 275da3c242f109549875aec3bc4e513e, type: 3}
-  offset: {x: 0, y: 2, z: 0}
 --- !u!1001 &3663616601663524921
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public class DeliverySpotManager : MonoBehaviour
 
     public GameObject deliverySpotPrefab;
     public List<Transform> deliverySpotLocations;
-    public float spotChangeTime;
+    // public float spotChangeTime;
     private float elapsedTime = 0;
 
     private bool isPaused = false;
@@ -36,12 +36,15 @@ public class DeliverySpotManager : MonoBehaviour
 
     void OnEnable()
     {
-        GameManager.pauseUpdate += UpdatePause;
+       /// GameManager.pauseUpdate += UpdatePause;
+        GameManager.ScoreUpdate += ActivateNext;
     }
 
     void OnDisable()
     {
-        GameManager.pauseUpdate -= UpdatePause;
+       // GameManager.pauseUpdate -= UpdatePause;
+        GameManager.ScoreUpdate -= ActivateNext;
+
     }
 
     void Start()
@@ -55,20 +58,20 @@ public class DeliverySpotManager : MonoBehaviour
         activeSpot = deliverySpotList.First;
         activeSpot.Value.instance.SetActive(true);
         deliverySpotUpdate(activeSpot.Value.instance.transform);
-        Invoke("ActivateNext", spotChangeTime);
+        // Invoke("ActivateNext", spotChangeTime);
     }
 
     void Update()
     {
-        if(isPaused)
-        {
-            CancelInvoke("ActivateNext");
-        }
-        else
-            elapsedTime += Time.deltaTime;
+        // if(isPaused)
+        // {
+        //     CancelInvoke("ActivateNext");
+        // }
+        // else
+        //     elapsedTime += Time.deltaTime;
     }
 
-    void ActivateNext()
+    void ActivateNext(int score)
     {
         activeSpot.Value.instance.SetActive(false);
         LinkedListNode<DeliverySpot> nextSpot = activeSpot.Next;
@@ -80,7 +83,7 @@ public class DeliverySpotManager : MonoBehaviour
         activeSpot.Value.instance.SetActive(true);
         elapsedTime = 0;
         deliverySpotUpdate(activeSpot.Value.instance.transform);
-        Invoke("ActivateNext", spotChangeTime);
+        // Invoke("ActivateNext", spotChangeTime);
     }
 
     void DeactiveAll()
@@ -96,7 +99,7 @@ public class DeliverySpotManager : MonoBehaviour
         isPaused = status;
         if (!isPaused)
         {
-            Invoke("ActivateNext", spotChangeTime - elapsedTime);
+            // Invoke("ActivateNext", spotChangeTime - elapsedTime);
         }
     }
 
