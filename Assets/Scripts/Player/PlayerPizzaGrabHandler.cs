@@ -17,7 +17,9 @@ public class PlayerPizzaGrabHandler : MonoBehaviour
 		}
 		else if (other.gameObject.tag == "Delivery Spot")
 		{
-			GameManager.Instance.AddScore( pizzaBoxManager.DeliverAll());
+			int numPizzas = pizzaBoxManager.DeliverAll();
+			GameManager.Instance.AddScore(numPizzas);
+			GameManager.Instance.pizzasDelivered += numPizzas;
 		}
 	}
 

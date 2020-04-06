@@ -35,6 +35,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if(pcont.isPaused) return;
 		HandleAngleLag();
 		HandleSpeedDip();
 		Vector3 newLocal = offsetBaseDirection*distance*distanceMult;

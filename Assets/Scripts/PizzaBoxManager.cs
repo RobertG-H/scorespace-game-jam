@@ -52,6 +52,7 @@ public class PizzaBoxManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(playerController.isPaused) return;
         if(Input.GetKeyDown("a"))
         {
             AddPizzaBox(1);

@@ -26,6 +26,7 @@ public class CameraFovController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if (playerController.isPaused) return;
 		HandleFovTransform();
 	}
 
