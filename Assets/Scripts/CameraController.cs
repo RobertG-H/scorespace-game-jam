@@ -6,12 +6,10 @@ public class CameraController : MonoBehaviour
 {
 	[SerializeField]
     Transform playerTransfrom;
-	[SerializeField]
-	float xRot = 21f;
+	PlayerController pcont;
 
 	[SerializeField]
 	float xOffsetMax = 5f;
-	float yAngleMax = 10f;
 
 	[SerializeField]
 	float distance = 17f;
@@ -19,6 +17,7 @@ public class CameraController : MonoBehaviour
 	public float distanceMult = 1f;
 
     Vector3 offsetBaseDirection;
+	float additionalY = 0f;
 
 	float xOffset =0f;
 	
@@ -30,16 +29,18 @@ public class CameraController : MonoBehaviour
     {
         offsetBaseDirection = transform.localPosition.normalized;
 		lastFramePlayerYangle = playerTransfrom.eulerAngles.y;
+		pcont= Object.FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
 		HandleAngleLag();
+		HandleSpeedDip();
 		Vector3 newLocal = offsetBaseDirection*distance*distanceMult;
+		newLocal.y += additionalY;
 		newLocal.x = xOffset;
 		this.transform.localPosition = newLocal;
-		// transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
 	}
 
 	float modulo(float A, float B)
@@ -55,13 +56,21 @@ public class CameraController : MonoBehaviour
 
 	void HandleAngleLag()
 	{
-
-
 		float turnAmount = Input.mousePosition.x / Screen.width;
 		turnAmount = turnAmount * 2f - 1f;
-
-
 		xOffset = Mathf.Lerp(xOffset, xOffsetMax * turnAmount, 0.2f);
+	}
+
+
+	void HandleSpeedDip()
+	{
+		float speedDipMult =Mathf.Clamp01(pcont.speed*0.005f);
+		speedDipMult *= speedDipMult*speedDipMult;
+
+		distanceMult = 1f + speedDipMult * 0.3f;
+
+		additionalY = -speedDipMult * 4f;
+
 	}
 
 
