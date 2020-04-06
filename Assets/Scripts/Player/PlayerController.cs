@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private Vector3 lastVelocity;
 
+	[Space]
+
     // SKIDDING
     public float SKIDTHRESHOLD;
     private bool isSkidding = false;
@@ -30,10 +32,11 @@ public class PlayerController : MonoBehaviour
     
     // JUMPING
     private bool isJumping = false;
-    private float currentJumpTime;
-    public float JUMPTIME;
+  //  private float currentJumpTime;
+  //  public float JUMPTIME;
     public float JUMPFORCE;
 
+	[Space]
 
     // ANGLES
     private float prevRollAngleRad = 0f;
@@ -43,12 +46,15 @@ public class PlayerController : MonoBehaviour
     public float ROLLANGLEDELTADEADZONE;
     public float rollAngleDelta {get; private set;}
 
+	[Space]
 
 	//BRAKING
 	[SerializeField]
 	private bool isBraking = false;
 	[SerializeField]
 	private float brakeAmount = 5f;
+	[SerializeField]
+	private float brakeTurnAngleAdjust = 2f;
 
 
 
@@ -103,7 +109,6 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         lastVelocity = transform.forward;
-        currentJumpTime = 0;
     }
 
 
@@ -127,8 +132,15 @@ public class PlayerController : MonoBehaviour
 
     void UpdateRotation()
     {
-        // Update player yaw based on rollangle
-        float yawUpdate = Mathf.Lerp(0,maxTurnAngleDeg,Mathf.Abs(rollAngleDeg)/maxRollAngleDeg) * Mathf.Sign(rollAngleDeg); 
+		// Update player yaw based on rollangle
+
+		float maxTurnAngle = maxTurnAngleDeg;
+
+		if (isBraking)
+			maxTurnAngle += brakeTurnAngleAdjust;
+
+
+		float yawUpdate = Mathf.Lerp(0,maxTurnAngleDeg,Mathf.Abs(rollAngleDeg)/maxRollAngleDeg) * Mathf.Sign(rollAngleDeg); 
         transform.Rotate(0,yawUpdate,0,Space.World);
 
         // Update board roll
@@ -231,7 +243,7 @@ public class PlayerController : MonoBehaviour
 		if (isJumping)
 		{
 			isJumping = false;
-			velocity.y = 50f;
+			velocity.y = JUMPFORCE;
 		}
 
 		Vector3 frameWiseVelocity = velocity*Time.deltaTime;
