@@ -19,6 +19,7 @@ public class PlayerPizzaGrabHandler : MonoBehaviour
 		else if (other.gameObject.tag == "Delivery Spot")
 		{
 			int numPizzas = pizzaBoxManager.DeliverAll();
+			if (numPizzas <= 0) return;
 			int score = numPizzas;
 			if (numPizzas > 20)
 				score += 20;
@@ -31,8 +32,8 @@ public class PlayerPizzaGrabHandler : MonoBehaviour
 			PlayerController player = GetComponent<PlayerController>();
 			score += (int) (8 * ((player.speed * 0.05f) * (player.speed * 0.05f)));
 			GameManager.Instance.AddScore(score);
-			scoreTextController.ShowScore(score);
 			GameManager.Instance.AddPizzaCount(numPizzas);
+			//scoreTextController.ShowScore(score);
 		}
 	}
 
