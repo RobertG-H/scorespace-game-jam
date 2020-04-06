@@ -25,11 +25,23 @@ public class DeliverySpotManager : MonoBehaviour
     public GameObject deliverySpotPrefab;
     public List<Transform> deliverySpotLocations;
     public float spotChangeTime;
+    private float elapsedTime = 0;
 
+    private bool isPaused = false;
 
     void Awake()
     {
         deliverySpotList = new LinkedList<DeliverySpot>();
+    }
+
+    void OnEnable()
+    {
+        GameManager.pauseUpdate += UpdatePause;
+    }
+
+    void OnDisable()
+    {
+        GameManager.pauseUpdate -= UpdatePause;
     }
 
     void Start()
@@ -46,6 +58,16 @@ public class DeliverySpotManager : MonoBehaviour
         Invoke("ActivateNext", spotChangeTime);
     }
 
+    void Update()
+    {
+        if(isPaused)
+        {
+            CancelInvoke("ActivateNext");
+        }
+        else
+            elapsedTime += Time.deltaTime;
+    }
+
     void ActivateNext()
     {
         activeSpot.Value.instance.SetActive(false);
@@ -56,6 +78,7 @@ public class DeliverySpotManager : MonoBehaviour
         }
         activeSpot = nextSpot;
         activeSpot.Value.instance.SetActive(true);
+        elapsedTime = 0;
         deliverySpotUpdate(activeSpot.Value.instance.transform);
         Invoke("ActivateNext", spotChangeTime);
     }
@@ -65,6 +88,15 @@ public class DeliverySpotManager : MonoBehaviour
         foreach(DeliverySpot ds in deliverySpotList)
         {
             ds.instance.SetActive(false);
+        }
+    }
+
+    void UpdatePause(bool status)
+    {
+        isPaused = status;
+        if (!isPaused)
+        {
+            Invoke("ActivateNext", spotChangeTime - elapsedTime);
         }
     }
 

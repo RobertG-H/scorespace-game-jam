@@ -91,10 +91,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Audio
+    public SFXManager sFXManager;
+
     // Debuging tools
     public bool isDebug;
     public Text debugText;
     public Image debugImage;
+
+    void OnEnable()
+    {
+        GameManager.pauseUpdate += UpdatePause;
+    }
+
+    void OnDisable()
+    {
+        GameManager.pauseUpdate -= UpdatePause;
+    }
 
     void Awake()
     {
@@ -103,6 +116,7 @@ public class PlayerController : MonoBehaviour
             DebugGUI.SetGraphProperties("rollDeltaGraph", "RollDelta", 0f, SKIDTHRESHOLD, 3, new Color(1, 1, 0), false);
             DebugGUI.SetGraphProperties("velGraph", "Vel", 0, 120, 2, new Color(1, 0.5f, 1), false);
         }
+        sFXManager = GetComponent<SFXManager>();
     }
 
     void Start()
@@ -168,13 +182,25 @@ public class PlayerController : MonoBehaviour
 
 	void UpdateVelocity()
 	{
+		float charSpeed = characterController.velocity.magnitude * 5.1f;
+		if (charSpeed < speed)
+		{
+			Debug.Log("SLOWING " + charSpeed + " < " + speed);
+			speed = Mathf.MoveTowards(speed, charSpeed, 50f * Time.deltaTime);
+		}
+
+
+
 		// Increase acceleration if rolling in any direction
 		if (rollingDirection != RollDirection.None)
 		{
 			speed += MOVEMENTACCEL * Mathf.Abs(rollAngleRad);
 		}
 
+
 		speed -= Mathf.Lerp(0f, ambientSlowDown * Time.deltaTime, speed*speed*0.0001f);
+
+
 
 
 		Vector3 lastDirection = characterController.velocity.normalized;
@@ -277,6 +303,7 @@ public class PlayerController : MonoBehaviour
         if (isJumping) return;
         if (!this.isGrounded) return;
         isJumping = true;
+        sFXManager.playSound("jump");
     }
 
 	public void Brake()
@@ -340,14 +367,10 @@ public class PlayerController : MonoBehaviour
         // speed = 0f;
     }
 
-    public void Pause()
-    {
-        isPaused = true;
-    }
 
-    public void UnPause()
+    public void UpdatePause(bool status)
     {
-        isPaused = false;
+        isPaused = status;
     }
 
     void UpdateLogger()

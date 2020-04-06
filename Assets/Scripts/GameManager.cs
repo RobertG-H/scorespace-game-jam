@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -14,16 +16,26 @@ public class GameManager : MonoBehaviour
     // Events
     public delegate void OnScoreUpdate(int score);
     public static event OnScoreUpdate ScoreUpdate;
-    public PlayerController player;
+    public delegate void OnPauseUpdate(bool isPaused);
+    public static event OnPauseUpdate pauseUpdate;
 
+    // Public Refs
+    public AudioClip pauseMusic;
+    public AudioClip gameplayMusic;
+    public float gameTime;
     public Text timerUI;
-
     public GameObject startUI;
     public GameObject endUI;
     public Text endText;
+  
+    [SerializeField]
+    public SFXManager sFXManager;
 
-    public float gameTime;
+
+    // Private vars
     private float currentTime;
+    private AudioSource audioSource;
+
     private bool isPaused;
     private bool hasEnded;
 
@@ -51,7 +63,8 @@ public class GameManager : MonoBehaviour
             DestroyImmediate(this.gameObject);
             return;
         }
- 
+        audioSource = GetComponent<AudioSource>();
+
         GameManager.Instance = this;
     }
  
@@ -81,7 +94,7 @@ public class GameManager : MonoBehaviour
         if (isPaused) return;
         if (!hasEnded)
             currentTime -= Time.deltaTime;
-        if( currentTime <= 0f)
+        if( currentTime <= 0f && !hasEnded)
         {
             EndGame();
         }
@@ -89,11 +102,12 @@ public class GameManager : MonoBehaviour
 
     public void ReloadLevel()
     {   
-        SceneManager.LoadScene("JLevel");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 
-    public void ToggleStartUI()
+    public void ToggleStartUI(InputAction.CallbackContext context)
     {
+        if(!context.started) return;
         if (hasEnded) return;
         if (startUI.activeSelf)
         {
@@ -111,24 +125,38 @@ public class GameManager : MonoBehaviour
     {
         hasEnded = true;
         endUI.SetActive(true);
-        endText.text = string.Format("Great work!\n You delivered {0} pizzas and you got a score of {1}. ", pizzasDelivered, score);
+        sFXManager.playSound("time_up");
+
+        endText.text = string.Format("PANtastic Work!\n You delivered {0} pizzas and you got a score of {1}. ", pizzasDelivered, score);
     }
 
     private void Pause()
     {
+        audioSource.clip = pauseMusic;
+        audioSource.Play();
         isPaused = true;
-        player.Pause();
+        pauseUpdate(isPaused);
     }
 
     private void UnPause()
     {
+        audioSource.clip = gameplayMusic;
+        audioSource.Play();
         isPaused = false;
-        player.UnPause();
+        sFXManager.playSound("start");
+        pauseUpdate(isPaused);
     }
 
     public void AddScore(int value)
     {
+        if (hasEnded) return;
         score += value;
         ScoreUpdate(score);
+    }
+
+    public void AddPizzaCount(int value)
+    {
+        if (hasEnded) return;
+        pizzasDelivered += value;
     }
 }

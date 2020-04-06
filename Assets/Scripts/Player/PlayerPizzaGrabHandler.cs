@@ -21,7 +21,7 @@ public class PlayerPizzaGrabHandler : MonoBehaviour
 			int numPizzas = pizzaBoxManager.DeliverAll();
 			GameManager.Instance.AddScore(numPizzas);
 			scoreTextController.ShowScore(numPizzas);
-			GameManager.Instance.pizzasDelivered += numPizzas;
+			GameManager.Instance.AddPizzaCount(numPizzas);
 		}
 	}
 
