@@ -138,7 +138,6 @@ public class PlayerController : MonoBehaviour
 		if (isBraking)
 			maxTurnAngle += brakeTurnAngleAdjust;
 
-
 		// float yawUpdate = Mathf.Lerp(0,maxTurnAngleDeg,Mathf.Abs(rollAngleDeg)/maxRollAngleDeg) * Mathf.Sign(rollAngleDeg); 
         float yawUpdate = Mathf.Lerp(0,maxTurnAngle,Mathf.Abs(rollAngleDeg)/maxRollAngleDeg) * Mathf.Sign(rollAngleDeg); //Brake allows sharper turns
 
