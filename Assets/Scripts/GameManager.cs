@@ -67,10 +67,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Pause();
         score = 0;
         pizzasDelivered = 0;
         currentTime = gameTime;
+        hasEnded = false;
+        startUI.SetActive(true);
+        Pause();
     }
 
     void Update()
