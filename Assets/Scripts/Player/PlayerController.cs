@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private float brakeTurnAngleAdjust = 2f;
 
+	private BoardLightController boardlight;
 
 
     RollDirection rollingDirection
@@ -112,6 +113,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+		boardlight = Object.FindObjectOfType<BoardLightController>();
         if (isDebug)
         {
             DebugGUI.SetGraphProperties("rollDeltaGraph", "RollDelta", 0f, SKIDTHRESHOLD, 3, new Color(1, 1, 0), false);
@@ -180,27 +182,42 @@ public class PlayerController : MonoBehaviour
         board.rotation = Quaternion.Euler(board.rotation.eulerAngles.x, board.rotation.eulerAngles.y, moveAngle);
     }
 
+	float sechHack(float x)
+	{
+		float e = 2.71828f;
+		float e2x = Mathf.Pow(e, x);
+		if (e2x == 0)
+			return 1f;
+
+		return 2f/(e2x + 1f / e2x);
+	}
 
 	void UpdateVelocity()
 	{
 		float charSpeed = characterController.velocity.magnitude * 5.1f;
 		if (charSpeed < speed)
 		{
-			Debug.Log("SLOWING " + charSpeed + " < " + speed);
 			speed = Mathf.MoveTowards(speed, charSpeed, 50f * Time.deltaTime);
 		}
 
 		// Increase acceleration if rolling in any direction
-		if (rollingDirection != RollDirection.None)
-		{
+		//if (rollingDirection != RollDirection.None)
+		//{
 			float accelmod = Mathf.Clamp01(speed * 0.005f);
 
-
-
 			float actualAccel = MOVEMENTACCEL -accelmod*accelmod *0.3f;
-			speed += actualAccel * (1f-rollAngleDelta*rollAngleDelta*0.8f);
+
+			float accelFromMouse = (1f - rollAngleDelta * rollAngleDelta * 0.8f);
+			accelFromMouse *= 1f - (sechHack(rollAngleDelta * 10f));
+
+			accelFromMouse = Mathf.Max(-5f, accelFromMouse);
+
+			boardlight.SetGradLevel(accelFromMouse, accelmod);
+
+
+			speed += actualAccel * accelFromMouse;
 			speed = Mathf.Max(0f, speed);
-		}
+	//	}
 
 		speed -= Mathf.Lerp(0f, ambientSlowDown * Time.deltaTime, speed*speed*0.0002f);
 
