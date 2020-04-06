@@ -193,7 +193,12 @@ public class PlayerController : MonoBehaviour
 		// Increase acceleration if rolling in any direction
 		if (rollingDirection != RollDirection.None)
 		{
-			speed += MOVEMENTACCEL * (1f-rollAngleDelta*rollAngleDelta*0.8f);
+			float accelmod = Mathf.Clamp01(speed * 0.005f);
+
+
+
+			float actualAccel = MOVEMENTACCEL -accelmod*accelmod *0.3f;
+			speed += actualAccel * (1f-rollAngleDelta*rollAngleDelta*0.8f);
 			speed = Mathf.Max(0f, speed);
 		}
 
