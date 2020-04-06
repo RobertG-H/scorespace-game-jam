@@ -182,13 +182,25 @@ public class PlayerController : MonoBehaviour
 
 	void UpdateVelocity()
 	{
+		float charSpeed = characterController.velocity.magnitude * 5.1f;
+		if (charSpeed < speed)
+		{
+			Debug.Log("SLOWING " + charSpeed + " < " + speed);
+			speed = Mathf.MoveTowards(speed, charSpeed, 50f * Time.deltaTime);
+		}
+
+
+
 		// Increase acceleration if rolling in any direction
 		if (rollingDirection != RollDirection.None)
 		{
 			speed += MOVEMENTACCEL * Mathf.Abs(rollAngleRad);
 		}
 
+
 		speed -= Mathf.Lerp(0f, ambientSlowDown * Time.deltaTime, speed*speed*0.0001f);
+
+
 
 
 		Vector3 lastDirection = characterController.velocity.normalized;
