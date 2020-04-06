@@ -12,11 +12,15 @@ public class AnimationController : MonoBehaviour
     public Transform pizzaBoxBase;
     public Transform LHandTargetForward;
     public Transform LHandTargetBackward;
+    public Transform LHandDriftTargetForward;
+    public Transform LHandDriftTargetBackward;
+
     public float headRotationOffset;
     public float headTracking; 
+
+    private KeyCode driftKey = KeyCode.Z;
     private Vector3 initHipsPos;
     private Vector3 initLHandIKPos;
-
     private Vector3 initpizzaBoxBasePos;
 
     // Start is called before the first frame update
@@ -48,7 +52,12 @@ public class AnimationController : MonoBehaviour
         hips.rotation = board.rotation;
         Vector3 newHipsPos = hips.localPosition;
         newHipsPos.y = initHipsPos.y * Mathf.Cos(boardAngleX*Mathf.Deg2Rad);
-        hips.localPosition = newHipsPos;
+        if(Input.GetKey(driftKey))
+        {
+            newHipsPos.y = newHipsPos.y *0.5f;
+        }
+
+        hips.localPosition = Vector3.Lerp(hips.localPosition, newHipsPos, 0.5f);
 
         //Head positioning  
         Quaternion newHeadRotation = Quaternion.identity;
@@ -82,13 +91,28 @@ public class AnimationController : MonoBehaviour
         pizzaBoxBase.localPosition = newPizzaBoxBasePos;
         
         //Left hand positioning
-        if(boardAngleX > 0)
+        if(Input.GetKey(driftKey))
         {
-            LHandIK.localPosition = Vector3.Lerp(initLHandIKPos, LHandTargetForward.localPosition, Mathf.Abs(boardAngleX/30f));
+            if(boardAngleX > 0)
+            {
+                LHandIK.localPosition = Vector3.Lerp(initLHandIKPos, LHandDriftTargetForward.localPosition, Mathf.Abs(boardAngleX/30f));
+            }
+            else
+            {
+                LHandIK.localPosition = Vector3.Lerp(initLHandIKPos, LHandDriftTargetBackward.localPosition, Mathf.Abs(boardAngleX/30f));
+            }
         }
         else
         {
-            LHandIK.localPosition = Vector3.Lerp(initLHandIKPos, LHandTargetBackward.localPosition, Mathf.Abs(boardAngleX/30f));
+            if(boardAngleX > 0)
+            {
+                LHandIK.localPosition = Vector3.Lerp(initLHandIKPos, LHandTargetForward.localPosition, Mathf.Abs(boardAngleX/30f));
+            }
+            else
+            {
+                LHandIK.localPosition = Vector3.Lerp(initLHandIKPos, LHandTargetBackward.localPosition, Mathf.Abs(boardAngleX/30f));
+            }
         }
+
     }
 }

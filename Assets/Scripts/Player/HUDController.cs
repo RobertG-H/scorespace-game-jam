@@ -38,7 +38,7 @@ public class HUDController : MonoBehaviour
     {
         if (!initialized) return;
 
-        speed.text = string.Format("Speed: {0}", (int)player.speed);
+        speed.text = string.Format("Speed: {0}", (int)(player.speed/2));
     }
 
     void OnScore(int scoreNum)

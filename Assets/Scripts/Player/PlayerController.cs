@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
 	[SerializeField]
 	private bool isGrounded = false;
+    public bool isPaused = false;
     // VELOCITY
     public float MOVEMENTACCEL;
     public float GRAVITY;
@@ -113,6 +114,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(isPaused) return;
         UpdateRollAngleDelta();
         UpdateRotation();
         UpdateVelocity();
@@ -138,8 +140,9 @@ public class PlayerController : MonoBehaviour
 		if (isBraking)
 			maxTurnAngle += brakeTurnAngleAdjust;
 
+		// float yawUpdate = Mathf.Lerp(0,maxTurnAngleDeg,Mathf.Abs(rollAngleDeg)/maxRollAngleDeg) * Mathf.Sign(rollAngleDeg); 
+        float yawUpdate = Mathf.Lerp(0,maxTurnAngle,Mathf.Abs(rollAngleDeg)/maxRollAngleDeg) * Mathf.Sign(rollAngleDeg); //Brake allows sharper turns
 
-		float yawUpdate = Mathf.Lerp(0, maxTurnAngle, Mathf.Abs(rollAngleDeg)/maxRollAngleDeg) * Mathf.Sign(rollAngleDeg); 
         transform.Rotate(0,yawUpdate,0,Space.World);
 
         // Update board roll
@@ -185,8 +188,8 @@ public class PlayerController : MonoBehaviour
 		float groundDotHit = Vector3.Dot(normal, lastDirection);
 
 		this.isGrounded = rayIsGrounded && groundDotHit <= 0.01f;
-		if (!this.isGrounded)
-			Debug.Log(rayIsGrounded + " << rayhit      groundDotHit > " + (groundDotHit <= 0) + "\n " + groundDotHit);
+		// if (!this.isGrounded)
+		// 	Debug.Log(rayIsGrounded + " << rayhit      groundDotHit > " + (groundDotHit <= 0) + "\n " + groundDotHit);
 
 		// Calculate ground or air movement
 		if (this.isGrounded)
@@ -335,6 +338,16 @@ public class PlayerController : MonoBehaviour
         // Return if not touching sides
         if (characterController.collisionFlags != CollisionFlags.Sides) return;
         // speed = 0f;
+    }
+
+    public void Pause()
+    {
+        isPaused = true;
+    }
+
+    public void UnPause()
+    {
+        isPaused = false;
     }
 
     void UpdateLogger()

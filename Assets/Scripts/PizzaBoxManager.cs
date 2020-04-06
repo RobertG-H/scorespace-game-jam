@@ -45,13 +45,14 @@ public class PizzaBoxManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {         
-        pizzaBoxHeight = pizzaBoxPrefab.transform.lossyScale.y;
+        pizzaBoxHeight = 0.07f;//pizzaBoxPrefab.transform.lossyScale.y;
         pizzaBoxList = new LinkedList<PizzaBox>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(playerController.isPaused) return;
         if(Input.GetKeyDown("a"))
         {
             AddPizzaBox(1);
